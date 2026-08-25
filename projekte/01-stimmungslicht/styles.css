@@ -1,0 +1,252 @@
+/* =========================================================
+   Projekt 01 — Stimmungslicht
+   CSS-Variablen: zentrale Werte, die JS zur Laufzeit ändert
+   ========================================================= */
+
+:root {
+  --farbe: #2a9d8f;
+  --helligkeit: 70%;
+  --tinte: color-mix(in srgb, var(--farbe) var(--helligkeit), #0d1114);
+  --text: #f4f0e8;
+  --text-muted: color-mix(in srgb, var(--text) 72%, transparent);
+  --ink: #12151a;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  color: var(--text);
+  background: var(--ink);
+  overflow-x: hidden;
+}
+
+/* --- Atmosphäre: Bild + farbige Wäsche --- */
+
+.atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.atmosphere__image {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgb(10 12 16 / 0.35), rgb(10 12 16 / 0.72)),
+    url("assets/mood-bg.png") center / cover no-repeat;
+  transform: scale(1.04);
+  animation: drift 18s var(--ease) infinite alternate;
+}
+
+.atmosphere__wash {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 80% 70% at 50% 40%,
+    color-mix(in srgb, var(--tinte) 78%, transparent),
+    color-mix(in srgb, var(--tinte) 28%, transparent) 55%,
+    rgb(8 10 14 / 0.85)
+  );
+  transition: background 0.55s var(--ease);
+  mix-blend-mode: soft-light;
+}
+
+/* --- Brand --- */
+
+.brand {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 1.5rem clamp(1.25rem, 4vw, 3rem);
+}
+
+.brand__name {
+  margin: 0;
+  font-family: "Fraunces", serif;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  animation: rise 0.9s var(--ease) both;
+}
+
+.brand__meta {
+  margin: 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  animation: rise 0.9s var(--ease) 0.08s both;
+}
+
+/* --- Stage (eine Komposition) --- */
+
+.stage {
+  position: relative;
+  z-index: 1;
+  min-height: calc(100vh - 5.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 clamp(1.25rem, 4vw, 3rem) clamp(2rem, 6vh, 4rem);
+  max-width: 40rem;
+}
+
+.stage__title {
+  margin: 0 0 0.65rem;
+  font-family: "Fraunces", serif;
+  font-size: clamp(2.4rem, 7vw, 4rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  animation: rise 1s var(--ease) 0.12s both;
+}
+
+.stage__lead {
+  margin: 0 0 2rem;
+  font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+  line-height: 1.45;
+  color: var(--text-muted);
+  max-width: 28ch;
+  animation: rise 1s var(--ease) 0.2s both;
+}
+
+/* --- Controls --- */
+
+.controls {
+  display: grid;
+  gap: 1.1rem;
+  animation: rise 1s var(--ease) 0.28s both;
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+  width: fit-content;
+}
+
+.field--range {
+  width: min(100%, 18rem);
+}
+
+.field__label {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+input[type="color"] {
+  width: 3.25rem;
+  height: 3.25rem;
+  padding: 0;
+  border: 2px solid rgb(255 255 255 / 0.35);
+  border-radius: 0.35rem;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 0.2rem;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--farbe);
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.35rem;
+}
+
+.btn {
+  font: inherit;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.7rem 1.15rem;
+  border: none;
+  border-radius: 0.35rem;
+  color: var(--ink);
+  background: var(--text);
+  cursor: pointer;
+  transition: transform 0.25s var(--ease), opacity 0.25s var(--ease);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn--ghost {
+  color: var(--text);
+  background: transparent;
+  border: 1px solid rgb(255 255 255 / 0.35);
+}
+
+.readout {
+  margin: 1.5rem 0 0;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  animation: rise 1s var(--ease) 0.36s both;
+}
+
+/* --- Motion --- */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: scale(1.04) translate(0, 0);
+  }
+  to {
+    transform: scale(1.08) translate(-1.2%, 0.8%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
