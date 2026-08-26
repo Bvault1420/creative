@@ -116,12 +116,21 @@ function buildPreviewDocument() {
   return html;
 }
 
+let previewBlobUrl = null;
+
 function refreshPreview() {
   const empty = !hasCode();
   previewEmpty.classList.toggle("hidden", !empty);
-  preview.classList.toggle("hidden", empty);
-  if (empty) return;
-  preview.srcdoc = buildPreviewDocument();
+  if (empty) {
+    preview.src = "about:blank";
+    return;
+  }
+  const html = buildPreviewDocument();
+  if (previewBlobUrl) {
+    URL.revokeObjectURL(previewBlobUrl);
+  }
+  previewBlobUrl = URL.createObjectURL(new Blob([html], { type: "text/html" }));
+  preview.src = previewBlobUrl;
 }
 
 function renderStep() {
