@@ -64,7 +64,9 @@ function setPanel(name) {
     btn.classList.toggle("is-active", btn.dataset.panel === name);
   });
   if (name === "code") syncEditorFromState();
-  if (name === "preview") refreshPreview();
+  if (name === "preview") {
+    window.setTimeout(refreshPreview, 0);
+  }
   save();
 }
 
@@ -92,19 +94,21 @@ function buildPreviewDocument() {
   const css = state.css || "";
   const js = state.js || "";
 
-  html = html.replace(/<link[^>]*href=["']styles\.css["'][^>]*>/gi, "");
-  html = html.replace(
-    /<script[^>]*src=["']script\.js["'][^>]*>\s*<\/script>/gi,
-    ""
-  );
+  html = html.replace(/<link[^>]*styles\.css[^>]*>/gi, "");
+  html = html.replace(/<script[^>]*script\.js[^>]*>[\s\S]*?<\/script>/gi, "");
 
-  const styleTag = `<style>${css}</style>`;
-  const scriptTag = `<script>${js}<\/script>`;
+  const styleTag = `<style>html,body{margin:0;min-height:100%;background:#12151a;color:#f4f0e8}${css}</style>`;
+  const scriptTag = js.trim() ? `<script>${js}<\/script>` : "";
+  const baseTag = `<base href="https://invalid.invalid/">`;
+
+  if (html.includes("<head>")) {
+    html = html.replace("<head>", `<head>${baseTag}`);
+  }
 
   if (html.includes("</head>")) {
     html = html.replace("</head>", `${styleTag}</head>`);
   } else {
-    html = `<head>${styleTag}</head>${html}`;
+    html = `<head>${baseTag}${styleTag}</head>${html}`;
   }
 
   if (html.includes("</body>")) {
@@ -122,13 +126,15 @@ function refreshPreview() {
   const empty = !hasCode();
   previewEmpty.classList.toggle("hidden", !empty);
   if (empty) {
+    if (previewBlobUrl) {
+      URL.revokeObjectURL(previewBlobUrl);
+      previewBlobUrl = null;
+    }
     preview.src = "about:blank";
     return;
   }
   const html = buildPreviewDocument();
-  if (previewBlobUrl) {
-    URL.revokeObjectURL(previewBlobUrl);
-  }
+  if (previewBlobUrl) URL.revokeObjectURL(previewBlobUrl);
   previewBlobUrl = URL.createObjectURL(new Blob([html], { type: "text/html" }));
   preview.src = previewBlobUrl;
 }

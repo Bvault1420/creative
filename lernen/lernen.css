@@ -40,6 +40,15 @@ body {
   display: none !important;
 }
 
+.panel--preview.hidden {
+  display: block !important;
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+  inset: 0;
+  z-index: -1;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
