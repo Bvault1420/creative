@@ -139,6 +139,51 @@ function refreshPreview() {
   preview.src = previewBlobUrl;
 }
 
+function escapeHtml(str) {
+  return String(str)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
+}
+
+function buildGuide(step) {
+  const files = [
+    { key: "html", label: "HTML", file: "index.html" },
+    { key: "css", label: "CSS", file: "styles.css" },
+    { key: "js", label: "JavaScript", file: "script.js" },
+  ];
+
+  let html = step.intro || "";
+  html += `
+    <div class="path-box">
+      <strong>Zwei Wege</strong>
+      <ol>
+        <li><strong>Selbst abschreiben:</strong> kompletter Code steht unten. Dann Tab <em>Code</em>, Datei wählen, Zeile für Zeile tippen.</li>
+        <li><strong>Übernehmen:</strong> Button unten, wenn du erst verstehen und die Vorschau sehen willst.</li>
+      </ol>
+    </div>
+  `;
+
+  files.forEach((item) => {
+    const code = (step[item.key] || "").trim();
+    if (!code) return;
+    html += `<h3>Zum Abschreiben — ${item.label}</h3>`;
+    html += `<p class="file-name">${item.file}</p>`;
+    html += `<pre class="copy-block"><code>${escapeHtml(code)}</code></pre>`;
+    html += `<p class="tiny">Tipp auf den Block kopiert ihn. Besser: im Tab Code selbst tippen.</p>`;
+
+    const lines = (step.explain && step.explain[item.key]) || [];
+    if (!lines.length) return;
+    html += `<h3>Was jede Zeile bedeutet — ${item.label}</h3><ol class="lines">`;
+    lines.forEach((row) => {
+      html += `<li><code>${escapeHtml(row.line)}</code><span>${escapeHtml(row.mean)}</span></li>`;
+    });
+    html += `</ol>`;
+  });
+
+  return html;
+}
+
 function renderStep() {
   const step = currentStep();
   const total = window.SCHRITTE.length;
@@ -146,7 +191,7 @@ function renderStep() {
     `Schritt ${step.nr} / ${total}`;
   document.getElementById("step-title").textContent = step.titel;
   document.getElementById("step-goal").textContent = step.ziel;
-  document.getElementById("step-body").innerHTML = step.body;
+  document.getElementById("step-body").innerHTML = buildGuide(step);
 
   const checks = document.getElementById("step-checks");
   checks.innerHTML = "";
@@ -226,6 +271,19 @@ editor.addEventListener("input", () => {
 });
 
 document.getElementById("apply-step").addEventListener("click", applyStepCode);
+document.getElementById("fill-file").addEventListener("click", () => {
+  const step = currentStep();
+  state[state.file] = step[state.file] || "";
+  syncEditorFromState();
+  save();
+  toast(`${state.file.toUpperCase()} aus diesem Schritt geholt`);
+});
+document.getElementById("clear-file").addEventListener("click", () => {
+  state[state.file] = "";
+  syncEditorFromState();
+  save();
+  toast(`${state.file.toUpperCase()}-Datei ist leer — jetzt abschreiben`);
+});
 document.getElementById("prev-step").addEventListener("click", () => goStep(-1));
 document.getElementById("next-step").addEventListener("click", () => goStep(1));
 document.getElementById("open-steps").addEventListener("click", () => sheet.showModal());

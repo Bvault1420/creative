@@ -10,11 +10,10 @@ https://rawcdn.githack.com/Bvault1420/creative/192d20dad3bb60ed7a0d22c36dac4156e
 
 So geht’s dort:
 
-1. **Anleitung** lesen
-2. **Code für diesen Schritt übernehmen** tippen
+1. **Anleitung** lesen — kompletter Code + jede Zeile erklärt
+2. Im Tab **Code** selbst abschreiben **oder** übernehmen
 3. **Vorschau** prüfen
-4. Im Tab **Code** darfst du alles ändern
-5. Hakt etwas: zurück in den Chat, Schrittnummer + was du siehst
+4. Hakt etwas: zurück in den Chat, Schrittnummer + was du siehst
 
 Fortschritt bleibt auf dem Handy gespeichert (localStorage).
 

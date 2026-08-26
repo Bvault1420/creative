@@ -106,7 +106,7 @@ body {
 
 .panel--code {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto 1fr;
   padding: 0;
   min-height: 0;
 }
@@ -182,6 +182,74 @@ body {
 .prose pre code {
   background: none;
   padding: 0;
+}
+
+.path-box {
+  margin: 0 0 1.1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  background: var(--ink-2);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.path-box ol {
+  margin: 0.35rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.file-name {
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.tiny {
+  margin: -0.35rem 0 1rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.lines {
+  list-style: none;
+  margin: 0 0 1.4rem;
+  padding: 0;
+}
+
+.lines li {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.lines code {
+  display: block;
+  font-size: 0.78rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #c8efe6;
+  background: rgb(42 157 143 / 0.12);
+  padding: 0.35rem 0.45rem;
+  border-radius: 0.35rem;
+}
+
+.lines span {
+  font-size: 0.92rem;
+  color: var(--cream);
+  line-height: 1.4;
+}
+
+.code-tools {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem;
+  padding: 0.45rem 0.6rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--ink);
 }
 
 .checks {

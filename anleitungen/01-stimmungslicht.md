@@ -10,7 +10,7 @@ Stattdessen die **Lern-App im Handy-Browser** öffnen:
 
 **[Stimmungslicht-App öffnen](https://rawcdn.githack.com/Bvault1420/creative/192d20dad3bb60ed7a0d22c36dac4156e59d8b63/lernen/index.html)**
 
-Dort: Anleitung lesen → Code übernehmen → Vorschau. Bei Problemen zurück in den Chat.
+Dort: Anleitung lesen (kompletter Code + jede Zeile erklärt) → selbst im Tab **Code** abschreiben **oder** übernehmen → Vorschau. Bei Problemen zurück in den Chat.
 
 ---
 
@@ -148,11 +148,33 @@ body {
 }
 ```
 
-### Kurz erklärt
+### Kurz erklärt — jede Zeile in `styles.css`
 
-- `:root { … }` = globale CSS-Variablen (später ändert JS `--farbe`)
-- `var(--text)` = Variable benutzen
-- `box-sizing: border-box` = Breite inkl. Padding/Border berechnen (weniger Layout-Überraschungen)
+| Zeile | Bedeutung |
+|------|-----------|
+| `:root {` | Wurzel der Seite. Hier liegen Variablen für überall. |
+| `--farbe: #2a9d8f;` | Variable `--farbe`: Teal. Später ändert JavaScript sie. |
+| `--helligkeit: 70%;` | Wie stark die Farbe leuchtet (Prozent). |
+| `--text: #f4f0e8;` | Textfarbe: warmes Creme. |
+| `--ink: #12151a;` | Hintergrund: fast schwarz. |
+| `}` | Variablen-Block zu Ende. |
+| `*,` | `*` = jedes Element. Komma = und außerdem… |
+| `*::before,` | Pseudo-Element davor (falls vorhanden). |
+| `*::after {` | Pseudo-Element danach. `{` öffnet den Block. |
+| `box-sizing: border-box;` | Breite zählt Padding und Rahmen mit. Layout wird einfacher. |
+| `}` | Block zu Ende. |
+| `html,` | Das `html`-Element, und… |
+| `body {` | das `body`-Element: beide dieselben Regeln. |
+| `margin: 0;` | Kein Standard-Rand um die Seite. |
+| `min-height: 100%;` | Mindestens so hoch wie das Fenster. |
+| `}` | Block zu Ende. |
+| `body {` | Nochmal `body`: extra Regeln nur für den sichtbaren Bereich. |
+| `font-family: "Outfit", sans-serif;` | Schrift Outfit, sonst irgendeine serifenlose. |
+| `color: var(--text);` | Textfarbe aus der Variable `--text`. |
+| `background: var(--ink);` | Hintergrund aus der Variable `--ink`. |
+| `}` | Body-Block zu Ende. |
+
+In der Handy-App gilt das für **jeden Schritt**: kompletter Code zum Abschreiben, darunter Zeile für Zeile.
 
 ### Check
 
