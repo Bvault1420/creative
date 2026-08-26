@@ -9,7 +9,13 @@ const state = {
   js: "",
 };
 
-const editor = document.getElementById("editor");
+const editors = {
+  html: document.getElementById("editor-html"),
+  css: document.getElementById("editor-css"),
+  js: document.getElementById("editor-js"),
+};
+const fileHint = document.getElementById("file-hint");
+const fileEmpty = document.getElementById("file-empty");
 const preview = document.getElementById("preview");
 const previewEmpty = document.getElementById("preview-empty");
 const toastEl = document.getElementById("toast");
@@ -56,6 +62,7 @@ function toast(message) {
 }
 
 function setPanel(name) {
+  flushEditorToState();
   state.panel = name;
   document.querySelectorAll(".panel").forEach((panel) => {
     panel.classList.toggle("hidden", panel.dataset.panel !== name);
@@ -63,30 +70,63 @@ function setPanel(name) {
   document.querySelectorAll(".dock__btn").forEach((btn) => {
     btn.classList.toggle("is-active", btn.dataset.panel === name);
   });
-  if (name === "code") syncEditorFromState();
+  if (name === "code") {
+    syncEditorsFromState();
+    showActiveEditor();
+  }
   if (name === "preview") {
     window.setTimeout(refreshPreview, 0);
   }
   save();
 }
 
+function fileLabel(name) {
+  return { html: "index.html", css: "styles.css", js: "script.js" }[name];
+}
+
+function showActiveEditor() {
+  ["html", "css", "js"].forEach((key) => {
+    editors[key].classList.toggle("hidden", key !== state.file);
+  });
+  document.querySelectorAll(".file-tab").forEach((tab) => {
+    tab.classList.toggle("is-active", tab.dataset.file === state.file);
+  });
+  fileHint.textContent = `Du bearbeitest ${fileLabel(state.file)}`;
+  const empty = !(state[state.file] || "").trim();
+  const stepHas = Boolean((currentStep()[state.file] || "").trim());
+  fileEmpty.classList.toggle("hidden", !empty);
+  if (empty && !stepHas) {
+    fileEmpty.textContent =
+      state.file === "css"
+        ? "CSS kommt ab Schritt 2. In Schritt 1 bleibt diese Datei leer."
+        : state.file === "js"
+          ? "JavaScript kommt ab Schritt 7. Bis dahin bleibt diese Datei leer."
+          : "Diese Datei ist noch leer.";
+  } else if (empty) {
+    fileEmpty.textContent =
+      "Diese Datei ist noch leer. Schreib sie aus der Anleitung ab — oder tippe „Datei aus Schritt holen“.";
+  }
+}
+
 function setFile(name) {
   flushEditorToState();
   state.file = name;
-  document.querySelectorAll(".file-tab").forEach((tab) => {
-    tab.classList.toggle("is-active", tab.dataset.file === name);
-  });
-  syncEditorFromState();
+  showActiveEditor();
   save();
 }
 
-function syncEditorFromState() {
-  editor.value = state[state.file] || "";
+function syncEditorsFromState() {
+  ["html", "css", "js"].forEach((key) => {
+    if (editors[key].value !== (state[key] || "")) {
+      editors[key].value = state[key] || "";
+    }
+  });
 }
 
 function flushEditorToState() {
-  if (state.panel !== "code") return;
-  state[state.file] = editor.value;
+  ["html", "css", "js"].forEach((key) => {
+    state[key] = editors[key].value;
+  });
 }
 
 function buildPreviewDocument() {
@@ -156,10 +196,10 @@ function buildGuide(step) {
   let html = step.intro || "";
   html += `
     <div class="path-box">
-      <strong>Zwei Wege</strong>
+      <strong>Zwei Wege — beide zählen</strong>
       <ol>
-        <li><strong>Selbst abschreiben:</strong> kompletter Code steht unten. Dann Tab <em>Code</em>, Datei wählen, Zeile für Zeile tippen.</li>
-        <li><strong>Übernehmen:</strong> Button unten, wenn du erst verstehen und die Vorschau sehen willst.</li>
+        <li><strong>Abschreiben:</strong> Code unten lesen, Tab <em>Code</em>, oben HTML / CSS / JS wählen, Zeile für Zeile tippen. So bleibt es sitzen.</li>
+        <li><strong>Übernehmen:</strong> Button unten, wenn du erst die Idee prüfen willst. Danach darfst du trotzdem ändern.</li>
       </ol>
     </div>
   `;
@@ -236,7 +276,7 @@ function applyStepCode() {
   state.html = step.html || "";
   state.css = step.css || "";
   state.js = step.js || "";
-  syncEditorFromState();
+  syncEditorsFromState();
   refreshPreview();
   save();
   toast("Code übernommen — schau unter Vorschau");
@@ -262,25 +302,34 @@ document.querySelectorAll(".dock__btn").forEach((btn) => {
 });
 
 document.querySelectorAll(".file-tab").forEach((tab) => {
-  tab.addEventListener("click", () => setFile(tab.dataset.file));
+  tab.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setFile(tab.dataset.file);
+  });
 });
 
-editor.addEventListener("input", () => {
-  state[state.file] = editor.value;
-  save();
+["html", "css", "js"].forEach((key) => {
+  editors[key].addEventListener("input", () => {
+    state[key] = editors[key].value;
+    if (key === state.file) showActiveEditor();
+    save();
+  });
 });
 
 document.getElementById("apply-step").addEventListener("click", applyStepCode);
 document.getElementById("fill-file").addEventListener("click", () => {
   const step = currentStep();
   state[state.file] = step[state.file] || "";
-  syncEditorFromState();
+  syncEditorsFromState();
+  showActiveEditor();
   save();
   toast(`${state.file.toUpperCase()} aus diesem Schritt geholt`);
 });
 document.getElementById("clear-file").addEventListener("click", () => {
   state[state.file] = "";
-  syncEditorFromState();
+  syncEditorsFromState();
+  showActiveEditor();
   save();
   toast(`${state.file.toUpperCase()}-Datei ist leer — jetzt abschreiben`);
 });
@@ -297,7 +346,8 @@ document.getElementById("reset-progress").addEventListener("click", () => {
   state.css = "";
   state.js = "";
   renderStep();
-  syncEditorFromState();
+  syncEditorsFromState();
+  showActiveEditor();
   refreshPreview();
   setPanel("guide");
   sheet.close();
@@ -327,6 +377,7 @@ if (window.visualViewport) {
 
 load();
 renderStep();
-syncEditorFromState();
+syncEditorsFromState();
+showActiveEditor();
 setPanel(state.panel === "code" || state.panel === "preview" ? state.panel : "guide");
 refreshPreview();

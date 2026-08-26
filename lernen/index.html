@@ -20,7 +20,7 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="lernen.css?v=5" />
+    <link rel="stylesheet" href="lernen.css?v=6" />
   </head>
   <body>
     <header class="top">
@@ -42,8 +42,9 @@
           Code für diesen Schritt übernehmen
         </button>
         <p class="hint">
-          Zwei Wege: unten den kompletten Code <strong>selbst abschreiben</strong>
-          (Tab Code) — oder hier übernehmen, wenn du nur prüfen willst.
+          HTML, CSS und JS sind drei Dateien — oben im Tab <strong>Code</strong>
+          umschalten. Abschreiben prägt; Übernehmen ist erlaubt, wenn du erst
+          prüfen willst.
         </p>
         <div class="step-nav">
           <button type="button" class="btn btn--ghost" id="prev-step">Zurück</button>
@@ -54,28 +55,64 @@
 
     <section class="panel panel--code hidden" id="panel-code" data-panel="code">
       <div class="file-tabs" role="tablist" aria-label="Dateien">
-        <button type="button" class="file-tab is-active" data-file="html">HTML</button>
-        <button type="button" class="file-tab" data-file="css">CSS</button>
-        <button type="button" class="file-tab" data-file="js">JS</button>
-      </div>
-      <div class="code-tools">
-        <button type="button" class="btn btn--ghost btn--small" id="fill-file">
-          Datei aus Schritt holen
+        <button type="button" class="file-tab is-active" data-file="html" id="tab-html">
+          HTML
         </button>
-        <button type="button" class="btn btn--ghost btn--small" id="clear-file">
-          Datei leeren
+        <button type="button" class="file-tab" data-file="css" id="tab-css">
+          CSS
+        </button>
+        <button type="button" class="file-tab" data-file="js" id="tab-js">
+          JS
         </button>
       </div>
-      <label class="sr-only" for="editor">Code-Editor</label>
-      <textarea
-        id="editor"
-        class="editor"
-        spellcheck="false"
-        autocapitalize="off"
-        autocomplete="off"
-        autocorrect="off"
-        enterkeyhint="enter"
-      ></textarea>
+      <div class="code-toolbar">
+        <p class="file-hint" id="file-hint">index.html</p>
+        <p class="file-empty hidden" id="file-empty">
+          Diese Datei ist noch leer. Schreib sie aus der Anleitung ab — oder
+          tippe „Datei aus Schritt holen“.
+        </p>
+        <div class="code-tools">
+          <button type="button" class="btn btn--ghost btn--small" id="fill-file">
+            Datei aus Schritt holen
+          </button>
+          <button type="button" class="btn btn--ghost btn--small" id="clear-file">
+            Datei leeren
+          </button>
+        </div>
+      </div>
+      <div class="editor-wrap">
+        <label class="sr-only" for="editor-html">HTML-Editor</label>
+        <textarea
+          id="editor-html"
+          class="editor"
+          data-file="html"
+          spellcheck="false"
+          autocapitalize="off"
+          autocomplete="off"
+          autocorrect="off"
+          enterkeyhint="enter"
+        ></textarea>
+        <textarea
+          id="editor-css"
+          class="editor hidden"
+          data-file="css"
+          spellcheck="false"
+          autocapitalize="off"
+          autocomplete="off"
+          autocorrect="off"
+          enterkeyhint="enter"
+        ></textarea>
+        <textarea
+          id="editor-js"
+          class="editor hidden"
+          data-file="js"
+          spellcheck="false"
+          autocapitalize="off"
+          autocomplete="off"
+          autocorrect="off"
+          enterkeyhint="enter"
+        ></textarea>
+      </div>
     </section>
 
     <section class="panel panel--preview hidden" id="panel-preview" data-panel="preview">
@@ -111,7 +148,7 @@
 
     <p class="toast hidden" id="toast" role="status"></p>
 
-    <script src="schritte.js?v=5"></script>
-    <script src="app.js?v=5"></script>
+    <script src="schritte.js?v=6"></script>
+    <script src="app.js?v=6"></script>
   </body>
 </html>

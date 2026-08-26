@@ -148,31 +148,22 @@ body {
 }
 ```
 
-### Kurz erklärt — jede Zeile in `styles.css`
+### Jede Zeile — so bleibt sie sitzen
 
-| Zeile | Bedeutung |
+| Zeile | Merkbild |
 |------|-----------|
-| `:root {` | Wurzel der Seite. Hier liegen Variablen für überall. |
-| `--farbe: #2a9d8f;` | Variable `--farbe`: Teal. Später ändert JavaScript sie. |
-| `--helligkeit: 70%;` | Wie stark die Farbe leuchtet (Prozent). |
-| `--text: #f4f0e8;` | Textfarbe: warmes Creme. |
-| `--ink: #12151a;` | Hintergrund: fast schwarz. |
-| `}` | Variablen-Block zu Ende. |
-| `*,` | `*` = jedes Element. Komma = und außerdem… |
-| `*::before,` | Pseudo-Element davor (falls vorhanden). |
-| `*::after {` | Pseudo-Element danach. `{` öffnet den Block. |
-| `box-sizing: border-box;` | Breite zählt Padding und Rahmen mit. Layout wird einfacher. |
-| `}` | Block zu Ende. |
-| `html,` | Das `html`-Element, und… |
-| `body {` | das `body`-Element: beide dieselben Regeln. |
-| `margin: 0;` | Kein Standard-Rand um die Seite. |
-| `min-height: 100%;` | Mindestens so hoch wie das Fenster. |
-| `}` | Block zu Ende. |
-| `body {` | Nochmal `body`: extra Regeln nur für den sichtbaren Bereich. |
-| `font-family: "Outfit", sans-serif;` | Schrift Outfit, sonst irgendeine serifenlose. |
-| `color: var(--text);` | Textfarbe aus der Variable `--text`. |
-| `background: var(--ink);` | Hintergrund aus der Variable `--ink`. |
-| `}` | Body-Block zu Ende. |
+| `:root {` | Der Zettel der ganzen Seite. Ein Ort, nicht sieben Kopien. |
+| `--farbe: #2a9d8f;` | Ein Name für die Stimmung. JS tauscht später nur diesen Namen. |
+| `--helligkeit: 70%;` | Wie stark das Licht steht. |
+| `--text: #f4f0e8;` | Creme auf Dunkel — lesbar, nicht grell. |
+| `--ink: #12151a;` | Die Nacht der Seite. |
+| `*, *::before, *::after` | Sternchen = wirklich jedes Element, plus CSS-Geisterstücke. |
+| `box-sizing: border-box;` | Die Kiste wird von außen gemessen. Futter ist schon in der Breite. |
+| `html, body { margin: 0; }` | Den Browser-Rand abschneiden. Wir bestimmen den Abstand. |
+| `min-height: 100%;` | Kein halbes Blatt — mindestens Fensterhöhe. |
+| `font-family: "Outfit", sans-serif;` | Outfit zuerst, sonst serifenlos — nie Times als Unfall. |
+| `color: var(--text);` | Nicht raten: den Namen vom Zettel holen. |
+| `background: var(--ink);` | Hintergrund vom selben Zettel. Ein Tausch färbt beides. |
 
 In der Handy-App gilt das für **jeden Schritt**: kompletter Code zum Abschreiben, darunter Zeile für Zeile.
 

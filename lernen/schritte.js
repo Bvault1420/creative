@@ -3,7 +3,7 @@ window.SCHRITTE = [
     "nr": 1,
     "titel": "HTML-Grundgerüst",
     "ziel": "Eine gültige Seite, die „Hallo“ zeigt.",
-    "intro": "<p>HTML ist das Gerüst der Seite. Du schreibst die ganze Datei <code>index.html</code> ab.</p>",
+    "intro": "<p><strong>HTML ist das Skelett.</strong> Es sagt nur, <em>was</em> da ist — noch nicht, wie es aussieht. Ohne Gerüst bleibt der Browser leer. Du baust jetzt die kleinste gültige Seite: Kopf für den Browser, Körper fürs Auge.</p><p>Merkbild: HTML = Bauzeichnung. CSS = Licht und Material. JS = Bewegung.</p>",
     "checks": [
       "Vorschau zeigt die Überschrift Stimmungslicht",
       "Darunter der Satz „Seite lädt — Schritt 1 ok.“"
@@ -15,59 +15,59 @@ window.SCHRITTE = [
       "html": [
         {
           "line": "<!DOCTYPE html>",
-          "mean": "Sagt dem Browser: das ist HTML5."
+          "mean": "Erste Zeile, immer. Heißt: das ist modernes HTML, nicht ein Altdokument."
         },
         {
           "line": "<html lang=\"de\">",
-          "mean": "Die Seite beginnt. lang=de = Inhalt auf Deutsch."
+          "mean": "Die Seite beginnt. lang=de hilft Screenreadern und der Rechtschreibung."
         },
         {
           "line": "<head>",
-          "mean": "Kopf: Infos für den Browser, nicht der sichtbare Text."
+          "mean": "Backstage: Titel, Zeichensatz, Dateien. Hier sieht niemand etwas."
         },
         {
           "line": "<meta charset=\"UTF-8\" />",
-          "mean": "Zeichensatz. Damit ä ö ü ß richtig sind."
+          "mean": "Damit ä, ö, ü und ß nicht als Kringel landen."
         },
         {
           "line": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
-          "mean": "Passt die Seite an die Handy-Breite an."
+          "mean": "Ein Viewport = die Seite nimmt die echte Handybreite, statt winzig zu zoomen."
         },
         {
           "line": "<title>Stimmungslicht — creative</title>",
-          "mean": "Titel im Browser-Tab."
+          "mean": "Was im Tab steht. Auch das ist Teil des ersten Eindrucks."
         },
         {
           "line": "<link rel=\"stylesheet\" href=\"styles.css\" />",
-          "mean": "Lädt deine CSS-Datei."
+          "mean": "Hol das Aussehen aus styles.css. Ohne diese Zeile bleibt CSS wirkungslos."
         },
         {
           "line": "</head>",
-          "mean": "Kopf zu Ende."
+          "mean": "Backstage zu. Ab hier kommt, was man sieht."
         },
         {
           "line": "<body>",
-          "mean": "Körper: alles, was du auf der Seite siehst."
+          "mean": "Die Bühne. Alles Sichtbare lebt hier."
         },
         {
           "line": "<h1>Stimmungslicht</h1>",
-          "mean": "Große Hauptüberschrift."
+          "mean": "Eine Seite, eine Hauptüberschrift. h1 ist der lauteste Titel."
         },
         {
           "line": "<p>Seite lädt — Schritt 1 ok.</p>",
-          "mean": "Ein normaler Absatz."
+          "mean": "Ein Absatz. So prüfst du: die Datei kommt wirklich an."
         },
         {
           "line": "<script src=\"script.js\"></script>",
-          "mean": "Lädt deine JavaScript-Datei."
+          "mean": "Hol das Verhalten aus script.js. Steht am Ende, damit das HTML schon da ist."
         },
         {
           "line": "</body>",
-          "mean": "Körper zu Ende."
+          "mean": "Bühne zu."
         },
         {
           "line": "</html>",
-          "mean": "HTML-Datei zu Ende."
+          "mean": "Datei zu. Nichts mehr danach."
         }
       ]
     }
@@ -76,7 +76,7 @@ window.SCHRITTE = [
     "nr": 2,
     "titel": "CSS-Basis & Variablen",
     "ziel": "Dunkler Hintergrund, lesbare Schrift, zentrale Farben.",
-    "intro": "<p>CSS bestimmt das Aussehen. Neu: Schriften im HTML und die komplette Datei <code>styles.css</code>.</p>",
+    "intro": "<p><strong>CSS ist das Licht.</strong> Dieselbe Seite, neuer Charakter: dunkel, ruhig, eine Schrift mit Absicht. In <code>:root</code> legst du Farben auf einen Zettel — ein Name, den die ganze Seite kennt.</p><p>Merkbild: <code>var(--text)</code> heißt nicht „rate die Farbe“, sondern „hol sie vom Zettel“. Später tauscht JavaScript nur den Zettel, nicht jedes Element.</p>",
     "checks": [
       "Vorschau ist dunkel, Text hell",
       "Schrift wirkt nicht mehr wie Standard-Times/Arial"
@@ -88,27 +88,27 @@ window.SCHRITTE = [
       "html": [
         {
           "line": "<!DOCTYPE html>",
-          "mean": "Sagt dem Browser: das ist HTML5."
+          "mean": "Erste Zeile, immer. Heißt: das ist modernes HTML, nicht ein Altdokument."
         },
         {
           "line": "<html lang=\"de\">",
-          "mean": "Die Seite beginnt. lang=de = Inhalt auf Deutsch."
+          "mean": "Die Seite beginnt. lang=de hilft Screenreadern und der Rechtschreibung."
         },
         {
           "line": "<head>",
-          "mean": "Kopf: Infos für den Browser, nicht der sichtbare Text."
+          "mean": "Backstage: Titel, Zeichensatz, Dateien. Hier sieht niemand etwas."
         },
         {
           "line": "<meta charset=\"UTF-8\" />",
-          "mean": "Zeichensatz. Damit ä ö ü ß richtig sind."
+          "mean": "Damit ä, ö, ü und ß nicht als Kringel landen."
         },
         {
           "line": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
-          "mean": "Passt die Seite an die Handy-Breite an."
+          "mean": "Ein Viewport = die Seite nimmt die echte Handybreite, statt winzig zu zoomen."
         },
         {
           "line": "<title>Stimmungslicht — creative</title>",
-          "mean": "Titel im Browser-Tab."
+          "mean": "Was im Tab steht. Auch das ist Teil des ersten Eindrucks."
         },
         {
           "line": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />",
@@ -136,121 +136,121 @@ window.SCHRITTE = [
         },
         {
           "line": "<link rel=\"stylesheet\" href=\"styles.css\" />",
-          "mean": "Lädt deine CSS-Datei."
+          "mean": "Hol das Aussehen aus styles.css. Ohne diese Zeile bleibt CSS wirkungslos."
         },
         {
           "line": "</head>",
-          "mean": "Kopf zu Ende."
+          "mean": "Backstage zu. Ab hier kommt, was man sieht."
         },
         {
           "line": "<body>",
-          "mean": "Körper: alles, was du auf der Seite siehst."
+          "mean": "Die Bühne. Alles Sichtbare lebt hier."
         },
         {
           "line": "<h1>Stimmungslicht</h1>",
-          "mean": "Große Hauptüberschrift."
+          "mean": "Eine Seite, eine Hauptüberschrift. h1 ist der lauteste Titel."
         },
         {
           "line": "<p>Seite lädt — Schritt 1 ok.</p>",
-          "mean": "Ein normaler Absatz."
+          "mean": "Ein Absatz. So prüfst du: die Datei kommt wirklich an."
         },
         {
           "line": "<script src=\"script.js\"></script>",
-          "mean": "Lädt deine JavaScript-Datei."
+          "mean": "Hol das Verhalten aus script.js. Steht am Ende, damit das HTML schon da ist."
         },
         {
           "line": "</body>",
-          "mean": "Körper zu Ende."
+          "mean": "Bühne zu."
         },
         {
           "line": "</html>",
-          "mean": "HTML-Datei zu Ende."
+          "mean": "Datei zu. Nichts mehr danach."
         }
       ],
       "css": [
         {
           "line": ":root {",
-          "mean": "Wurzel der Seite. Hier speicherst du Variablen für überall."
+          "mean": "Der Zettel der ganzen Seite. Was hier steht, gilt überall — ein Ort, nicht sieben Kopien."
         },
         {
           "line": "--farbe: #2a9d8f;",
-          "mean": "Variable --farbe: Teal. Später ändert JavaScript sie."
+          "mean": "Name --farbe, Wert Teal. Später tauscht JS nur diesen Namen, nicht jedes Element."
         },
         {
           "line": "--helligkeit: 70%;",
-          "mean": "Wie stark die Farbe leuchtet (Prozent)."
+          "mean": "Wie stark das Licht steht. Prozent, weil Farbe und Stärke zusammenwirken."
         },
         {
           "line": "--text: #f4f0e8;",
-          "mean": "Textfarbe: warmes Creme."
+          "mean": "Creme auf Dunkel. So bleibt Schrift lesbar, ohne grell zu werden."
         },
         {
           "line": "--ink: #12151a;",
-          "mean": "Hintergrund: fast schwarz."
+          "mean": "Die Nacht der Seite. Fast schwarz, aber nicht drucker-schwarz."
         },
         {
           "line": "}",
-          "mean": "Variablen-Block zu Ende."
+          "mean": "Zettel zu. Die Namen leben weiter, der Block ist nur die Definition."
         },
         {
           "line": "*,",
-          "mean": "* = jedes Element. Das Komma heißt: und außerdem…"
+          "mean": "Sternchen = wirklich jedes Element. Das Komma heißt: und außerdem …"
         },
         {
           "line": "*::before,",
-          "mean": "::before = unsichtbares Pseudo-Element davor (falls vorhanden)."
+          "mean": "Geisterstück vor dem Inhalt, falls CSS eines erzeugt. Auch das muss mitgerechnet werden."
         },
         {
           "line": "*::after {",
-          "mean": "::after = Pseudo-Element danach. { öffnet den Regel-Block."
+          "mean": "Geisterstück danach. { öffnet die gemeinsame Regel für alle drei."
         },
         {
           "line": "box-sizing: border-box;",
-          "mean": "Breite zählt Padding und Rahmen mit. Layout wird einfacher."
+          "mean": "Die Kiste wird von außen gemessen. Futter und Rahmen sind schon in der Breite — sonst rechnet der Browser gegen dich."
         },
         {
           "line": "}",
-          "mean": "Dieser Block ist zu Ende."
+          "mean": "Reset zu. Ab hier darfst du Breiten ernst nehmen."
         },
         {
           "line": "html,",
-          "mean": "Das html-Element, und…"
+          "mean": "Das Dokument selbst, und …"
         },
         {
           "line": "body {",
-          "mean": "das body-Element: beide bekommen dieselben Regeln."
+          "mean": "… die Bühne. Beide: kein Rand, volle Höhe. Sonst bleibt ein Grausaum vom Browser."
         },
         {
           "line": "margin: 0;",
-          "mean": "Keinen Standard-Rand um die Seite."
+          "mean": "Den Standard-Rand abschneiden. Wir bestimmen den Abstand, nicht der Browser."
         },
         {
           "line": "min-height: 100%;",
-          "mean": "Mindestens so hoch wie das Fenster."
+          "mean": "Mindestens so hoch wie das Fenster. Kein halbes Blatt."
         },
         {
           "line": "}",
-          "mean": "Block zu Ende."
+          "mean": "Grundfläche steht."
         },
         {
           "line": "body {",
-          "mean": "Noch einmal body — extra Regeln nur für den sichtbaren Bereich."
+          "mean": "Zweiter Anlauf nur für den body: Schrift, Textfarbe, Hintergrund."
         },
         {
           "line": "font-family: \"Outfit\", sans-serif;",
-          "mean": "Schrift Outfit, sonst irgendeine serifenlose."
+          "mean": "Outfit zuerst. Kommt sie nicht, irgendeine serifenlose — nie Times als Unfall."
         },
         {
           "line": "color: var(--text);",
-          "mean": "Textfarbe aus der Variable --text holen."
+          "mean": "Nicht die Creme-Farbe hart eintragen: den Namen vom Zettel holen."
         },
         {
           "line": "background: var(--ink);",
-          "mean": "Hintergrund aus der Variable --ink holen."
+          "mean": "Hintergrund vom selben Zettel. Ein Tausch in :root färbt beides um."
         },
         {
           "line": "}",
-          "mean": "Body-Block zu Ende."
+          "mean": "Basis steht. Die Seite hat jetzt Charakter, noch keine Komposition."
         }
       ]
     }
@@ -259,7 +259,7 @@ window.SCHRITTE = [
     "nr": 3,
     "titel": "Atmosphäre",
     "ziel": "Eine farbige Schicht, die wir später steuern.",
-    "intro": "<p>Neu: eine Farbschicht hinter dem Text. Die steuerst du später mit JavaScript.</p>",
+    "intro": "<p><strong>Die Atmosphäre liegt hinter allem.</strong> Eine Schicht färbt den Raum, ohne den Text zu stehlen. Du malst nicht Buchstabe für Buchstabe — du dimmst ein Licht. Genau das drehst du später am Regler.</p>",
     "checks": [
       "Du siehst einen teal/grünen Glow",
       "Der Text bleibt lesbar"
@@ -271,27 +271,27 @@ window.SCHRITTE = [
       "html": [
         {
           "line": "<!DOCTYPE html>",
-          "mean": "Sagt dem Browser: das ist HTML5."
+          "mean": "Erste Zeile, immer. Heißt: das ist modernes HTML, nicht ein Altdokument."
         },
         {
           "line": "<html lang=\"de\">",
-          "mean": "Die Seite beginnt. lang=de = Inhalt auf Deutsch."
+          "mean": "Die Seite beginnt. lang=de hilft Screenreadern und der Rechtschreibung."
         },
         {
           "line": "<head>",
-          "mean": "Kopf: Infos für den Browser, nicht der sichtbare Text."
+          "mean": "Backstage: Titel, Zeichensatz, Dateien. Hier sieht niemand etwas."
         },
         {
           "line": "<meta charset=\"UTF-8\" />",
-          "mean": "Zeichensatz. Damit ä ö ü ß richtig sind."
+          "mean": "Damit ä, ö, ü und ß nicht als Kringel landen."
         },
         {
           "line": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
-          "mean": "Passt die Seite an die Handy-Breite an."
+          "mean": "Ein Viewport = die Seite nimmt die echte Handybreite, statt winzig zu zoomen."
         },
         {
           "line": "<title>Stimmungslicht — creative</title>",
-          "mean": "Titel im Browser-Tab."
+          "mean": "Was im Tab steht. Auch das ist Teil des ersten Eindrucks."
         },
         {
           "line": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />",
@@ -319,15 +319,15 @@ window.SCHRITTE = [
         },
         {
           "line": "<link rel=\"stylesheet\" href=\"styles.css\" />",
-          "mean": "Lädt deine CSS-Datei."
+          "mean": "Hol das Aussehen aus styles.css. Ohne diese Zeile bleibt CSS wirkungslos."
         },
         {
           "line": "</head>",
-          "mean": "Kopf zu Ende."
+          "mean": "Backstage zu. Ab hier kommt, was man sieht."
         },
         {
           "line": "<body>",
-          "mean": "Körper: alles, was du auf der Seite siehst."
+          "mean": "Die Bühne. Alles Sichtbare lebt hier."
         },
         {
           "line": "<div class=\"atmosphere\" aria-hidden=\"true\">",
@@ -343,141 +343,141 @@ window.SCHRITTE = [
         },
         {
           "line": "<h1>Stimmungslicht</h1>",
-          "mean": "Große Hauptüberschrift."
+          "mean": "Eine Seite, eine Hauptüberschrift. h1 ist der lauteste Titel."
         },
         {
           "line": "<p>Seite lädt — Schritt 1 ok.</p>",
-          "mean": "Ein normaler Absatz."
+          "mean": "Ein Absatz. So prüfst du: die Datei kommt wirklich an."
         },
         {
           "line": "<script src=\"script.js\"></script>",
-          "mean": "Lädt deine JavaScript-Datei."
+          "mean": "Hol das Verhalten aus script.js. Steht am Ende, damit das HTML schon da ist."
         },
         {
           "line": "</body>",
-          "mean": "Körper zu Ende."
+          "mean": "Bühne zu."
         },
         {
           "line": "</html>",
-          "mean": "HTML-Datei zu Ende."
+          "mean": "Datei zu. Nichts mehr danach."
         }
       ],
       "css": [
         {
           "line": ":root {",
-          "mean": "Wurzel der Seite. Hier speicherst du Variablen für überall."
+          "mean": "Der Zettel der ganzen Seite. Was hier steht, gilt überall — ein Ort, nicht sieben Kopien."
         },
         {
           "line": "--farbe: #2a9d8f;",
-          "mean": "Variable --farbe: Teal. Später ändert JavaScript sie."
+          "mean": "Name --farbe, Wert Teal. Später tauscht JS nur diesen Namen, nicht jedes Element."
         },
         {
           "line": "--helligkeit: 70%;",
-          "mean": "Wie stark die Farbe leuchtet (Prozent)."
+          "mean": "Wie stark das Licht steht. Prozent, weil Farbe und Stärke zusammenwirken."
         },
         {
           "line": "--text: #f4f0e8;",
-          "mean": "Textfarbe: warmes Creme."
+          "mean": "Creme auf Dunkel. So bleibt Schrift lesbar, ohne grell zu werden."
         },
         {
           "line": "--ink: #12151a;",
-          "mean": "Hintergrund: fast schwarz."
+          "mean": "Die Nacht der Seite. Fast schwarz, aber nicht drucker-schwarz."
         },
         {
           "line": "}",
-          "mean": "Variablen-Block zu Ende."
+          "mean": "Zettel zu. Die Namen leben weiter, der Block ist nur die Definition."
         },
         {
           "line": "*,",
-          "mean": "* = jedes Element. Das Komma heißt: und außerdem…"
+          "mean": "Sternchen = wirklich jedes Element. Das Komma heißt: und außerdem …"
         },
         {
           "line": "*::before,",
-          "mean": "::before = unsichtbares Pseudo-Element davor (falls vorhanden)."
+          "mean": "Geisterstück vor dem Inhalt, falls CSS eines erzeugt. Auch das muss mitgerechnet werden."
         },
         {
           "line": "*::after {",
-          "mean": "::after = Pseudo-Element danach. { öffnet den Regel-Block."
+          "mean": "Geisterstück danach. { öffnet die gemeinsame Regel für alle drei."
         },
         {
           "line": "box-sizing: border-box;",
-          "mean": "Breite zählt Padding und Rahmen mit. Layout wird einfacher."
+          "mean": "Die Kiste wird von außen gemessen. Futter und Rahmen sind schon in der Breite — sonst rechnet der Browser gegen dich."
         },
         {
           "line": "}",
-          "mean": "Dieser Block ist zu Ende."
+          "mean": "Reset zu. Ab hier darfst du Breiten ernst nehmen."
         },
         {
           "line": "html,",
-          "mean": "Das html-Element, und…"
+          "mean": "Das Dokument selbst, und …"
         },
         {
           "line": "body {",
-          "mean": "das body-Element: beide bekommen dieselben Regeln."
+          "mean": "… die Bühne. Beide: kein Rand, volle Höhe. Sonst bleibt ein Grausaum vom Browser."
         },
         {
           "line": "margin: 0;",
-          "mean": "Keinen Standard-Rand um die Seite."
+          "mean": "Den Standard-Rand abschneiden. Wir bestimmen den Abstand, nicht der Browser."
         },
         {
           "line": "min-height: 100%;",
-          "mean": "Mindestens so hoch wie das Fenster."
+          "mean": "Mindestens so hoch wie das Fenster. Kein halbes Blatt."
         },
         {
           "line": "}",
-          "mean": "Block zu Ende."
+          "mean": "Grundfläche steht."
         },
         {
           "line": "body {",
-          "mean": "Noch einmal body — extra Regeln nur für den sichtbaren Bereich."
+          "mean": "Zweiter Anlauf nur für den body: Schrift, Textfarbe, Hintergrund."
         },
         {
           "line": "font-family: \"Outfit\", sans-serif;",
-          "mean": "Schrift Outfit, sonst irgendeine serifenlose."
+          "mean": "Outfit zuerst. Kommt sie nicht, irgendeine serifenlose — nie Times als Unfall."
         },
         {
           "line": "color: var(--text);",
-          "mean": "Textfarbe aus der Variable --text holen."
+          "mean": "Nicht die Creme-Farbe hart eintragen: den Namen vom Zettel holen."
         },
         {
           "line": "background: var(--ink);",
-          "mean": "Hintergrund aus der Variable --ink holen."
+          "mean": "Hintergrund vom selben Zettel. Ein Tausch in :root färbt beides um."
         },
         {
           "line": "}",
-          "mean": "Body-Block zu Ende."
+          "mean": "Basis steht. Die Seite hat jetzt Charakter, noch keine Komposition."
         },
         {
           "line": ".atmosphere {",
-          "mean": "Klasse .atmosphere: die Hintergrund-Schicht."
+          "mean": "Die hintere Wand des Raums. Klasse mit Punkt: ein Name, den HTML tragen muss."
         },
         {
           "line": "position: fixed;",
-          "mean": "Bleibt am Bildschirm kleben, scrollt nicht weg."
+          "mean": "Klebt am Fenster. Scrollt der Inhalt, das Licht bleibt."
         },
         {
           "line": "inset: 0;",
-          "mean": "Oben, rechts, unten, links = 0 → füllt alles."
+          "mean": "Oben, rechts, unten, links = 0. Kurzform für: füll alles."
         },
         {
           "line": "z-index: 0;",
-          "mean": "Ganz hinten. Inhalt kommt später mit höherem z-index."
+          "mean": "Hinten. Text bekommt später 1 und tritt davor — wie Kulisse und Schauspieler."
         },
         {
           "line": "pointer-events: none;",
-          "mean": "Klicks gehen durch, nicht auf diese Schicht."
+          "mean": "Diese Wand fängt keine Klicks. Finger gehen durch zum Inhalt."
         },
         {
           "line": "}",
-          "mean": "Atmosphere-Block zu Ende."
+          "mean": "Wand steht."
         },
         {
           "line": ".atmosphere__wash {",
-          "mean": "Die farbige Wäsche innerhalb der Schicht."
+          "mean": "Die Farbwäsche auf der Wand. BEM-Name: gehört zur Atmosphere."
         },
         {
           "line": "position: absolute;",
-          "mean": "Position relativ zur Atmosphere."
+          "mean": "Füllt die Wand, nicht das Fenster selbst."
         },
         {
           "line": "inset: 0;",
@@ -485,31 +485,31 @@ window.SCHRITTE = [
         },
         {
           "line": "background: radial-gradient(",
-          "mean": "Ein runder Farbverlauf beginnt."
+          "mean": "Kein Flächenton: ein Verlauf von einem Kern nach außen."
         },
         {
           "line": "ellipse 80% 70% at 50% 40%,",
-          "mean": "Form und Position des Verlaufs (Mitte, etwas oben)."
+          "mean": "Der Kern sitzt mittig, etwas über der Mitte — wie Licht von vorn."
         },
         {
           "line": "color-mix(in srgb, var(--farbe) var(--helligkeit), transparent),",
-          "mean": "Mischt --farbe mit Transparenz, Stärke = --helligkeit."
+          "mean": "Farbe vom Zettel, Stärke vom Zettel, Rest Luft. Genau deshalb wirken die Regler."
         },
         {
           "line": "rgb(8 10 14 / 0.9)",
-          "mean": "Nach außen wird es fast schwarz."
+          "mean": "Nach außen Nacht. Der Verlauf braucht ein Ende, sonst wirkt er billig."
         },
         {
           "line": ");",
-          "mean": "Verlauf zu Ende."
+          "mean": "Verlauf zu."
         },
         {
           "line": "transition: background 0.5s ease;",
-          "mean": "Farbwechsel dauert 0,5 Sekunden, weich."
+          "mean": "Ein halbe Sekunde weich. Licht springt nicht, es atmet."
         },
         {
           "line": "}",
-          "mean": "Wash-Block zu Ende."
+          "mean": "Wäsche zu. Ab jetzt ist --farbe sichtbar, nicht nur definiert."
         }
       ]
     }
@@ -518,7 +518,7 @@ window.SCHRITTE = [
     "nr": 4,
     "titel": "Brand + Bühne",
     "ziel": "Marke oben, Titel unten — eine klare Komposition.",
-    "intro": "<p>Neu: Kopfzeile und Bühne. Der Titel rutscht nach unten, die Marke bleibt oben.</p>",
+    "intro": "<p><strong>Eine Bühne, kein Kartenstapel.</strong> Marke oben, Titel unten. Flexbox schiebt den Inhalt an seinen Platz, <code>clamp</code> lässt die Schrift mit dem Bildschirm atmen — auf dem Handy genauso wie am Rechner.</p>",
     "checks": [
       "Oben: creative und Projekt 01",
       "Unten: großer Titel + kurzer Text"
@@ -530,27 +530,27 @@ window.SCHRITTE = [
       "html": [
         {
           "line": "<!DOCTYPE html>",
-          "mean": "Sagt dem Browser: das ist HTML5."
+          "mean": "Erste Zeile, immer. Heißt: das ist modernes HTML, nicht ein Altdokument."
         },
         {
           "line": "<html lang=\"de\">",
-          "mean": "Die Seite beginnt. lang=de = Inhalt auf Deutsch."
+          "mean": "Die Seite beginnt. lang=de hilft Screenreadern und der Rechtschreibung."
         },
         {
           "line": "<head>",
-          "mean": "Kopf: Infos für den Browser, nicht der sichtbare Text."
+          "mean": "Backstage: Titel, Zeichensatz, Dateien. Hier sieht niemand etwas."
         },
         {
           "line": "<meta charset=\"UTF-8\" />",
-          "mean": "Zeichensatz. Damit ä ö ü ß richtig sind."
+          "mean": "Damit ä, ö, ü und ß nicht als Kringel landen."
         },
         {
           "line": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
-          "mean": "Passt die Seite an die Handy-Breite an."
+          "mean": "Ein Viewport = die Seite nimmt die echte Handybreite, statt winzig zu zoomen."
         },
         {
           "line": "<title>Stimmungslicht — creative</title>",
-          "mean": "Titel im Browser-Tab."
+          "mean": "Was im Tab steht. Auch das ist Teil des ersten Eindrucks."
         },
         {
           "line": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />",
@@ -578,15 +578,15 @@ window.SCHRITTE = [
         },
         {
           "line": "<link rel=\"stylesheet\" href=\"styles.css\" />",
-          "mean": "Lädt deine CSS-Datei."
+          "mean": "Hol das Aussehen aus styles.css. Ohne diese Zeile bleibt CSS wirkungslos."
         },
         {
           "line": "</head>",
-          "mean": "Kopf zu Ende."
+          "mean": "Backstage zu. Ab hier kommt, was man sieht."
         },
         {
           "line": "<body>",
-          "mean": "Körper: alles, was du auf der Seite siehst."
+          "mean": "Die Bühne. Alles Sichtbare lebt hier."
         },
         {
           "line": "<div class=\"atmosphere\" aria-hidden=\"true\">",
@@ -642,133 +642,133 @@ window.SCHRITTE = [
         },
         {
           "line": "<script src=\"script.js\"></script>",
-          "mean": "Lädt deine JavaScript-Datei."
+          "mean": "Hol das Verhalten aus script.js. Steht am Ende, damit das HTML schon da ist."
         },
         {
           "line": "</body>",
-          "mean": "Körper zu Ende."
+          "mean": "Bühne zu."
         },
         {
           "line": "</html>",
-          "mean": "HTML-Datei zu Ende."
+          "mean": "Datei zu. Nichts mehr danach."
         }
       ],
       "css": [
         {
           "line": ":root {",
-          "mean": "Wurzel der Seite. Hier speicherst du Variablen für überall."
+          "mean": "Der Zettel der ganzen Seite. Was hier steht, gilt überall — ein Ort, nicht sieben Kopien."
         },
         {
           "line": "--farbe: #2a9d8f;",
-          "mean": "Variable --farbe: Teal. Später ändert JavaScript sie."
+          "mean": "Name --farbe, Wert Teal. Später tauscht JS nur diesen Namen, nicht jedes Element."
         },
         {
           "line": "--helligkeit: 70%;",
-          "mean": "Wie stark die Farbe leuchtet (Prozent)."
+          "mean": "Wie stark das Licht steht. Prozent, weil Farbe und Stärke zusammenwirken."
         },
         {
           "line": "--text: #f4f0e8;",
-          "mean": "Textfarbe: warmes Creme."
+          "mean": "Creme auf Dunkel. So bleibt Schrift lesbar, ohne grell zu werden."
         },
         {
           "line": "--ink: #12151a;",
-          "mean": "Hintergrund: fast schwarz."
+          "mean": "Die Nacht der Seite. Fast schwarz, aber nicht drucker-schwarz."
         },
         {
           "line": "}",
-          "mean": "Variablen-Block zu Ende."
+          "mean": "Zettel zu. Die Namen leben weiter, der Block ist nur die Definition."
         },
         {
           "line": "*,",
-          "mean": "* = jedes Element. Das Komma heißt: und außerdem…"
+          "mean": "Sternchen = wirklich jedes Element. Das Komma heißt: und außerdem …"
         },
         {
           "line": "*::before,",
-          "mean": "::before = unsichtbares Pseudo-Element davor (falls vorhanden)."
+          "mean": "Geisterstück vor dem Inhalt, falls CSS eines erzeugt. Auch das muss mitgerechnet werden."
         },
         {
           "line": "*::after {",
-          "mean": "::after = Pseudo-Element danach. { öffnet den Regel-Block."
+          "mean": "Geisterstück danach. { öffnet die gemeinsame Regel für alle drei."
         },
         {
           "line": "box-sizing: border-box;",
-          "mean": "Breite zählt Padding und Rahmen mit. Layout wird einfacher."
+          "mean": "Die Kiste wird von außen gemessen. Futter und Rahmen sind schon in der Breite — sonst rechnet der Browser gegen dich."
         },
         {
           "line": "}",
-          "mean": "Dieser Block ist zu Ende."
+          "mean": "Reset zu. Ab hier darfst du Breiten ernst nehmen."
         },
         {
           "line": "html,",
-          "mean": "Das html-Element, und…"
+          "mean": "Das Dokument selbst, und …"
         },
         {
           "line": "body {",
-          "mean": "das body-Element: beide bekommen dieselben Regeln."
+          "mean": "… die Bühne. Beide: kein Rand, volle Höhe. Sonst bleibt ein Grausaum vom Browser."
         },
         {
           "line": "margin: 0;",
-          "mean": "Keinen Standard-Rand um die Seite."
+          "mean": "Den Standard-Rand abschneiden. Wir bestimmen den Abstand, nicht der Browser."
         },
         {
           "line": "min-height: 100%;",
-          "mean": "Mindestens so hoch wie das Fenster."
+          "mean": "Mindestens so hoch wie das Fenster. Kein halbes Blatt."
         },
         {
           "line": "}",
-          "mean": "Block zu Ende."
+          "mean": "Grundfläche steht."
         },
         {
           "line": "body {",
-          "mean": "Noch einmal body — extra Regeln nur für den sichtbaren Bereich."
+          "mean": "Zweiter Anlauf nur für den body: Schrift, Textfarbe, Hintergrund."
         },
         {
           "line": "font-family: \"Outfit\", sans-serif;",
-          "mean": "Schrift Outfit, sonst irgendeine serifenlose."
+          "mean": "Outfit zuerst. Kommt sie nicht, irgendeine serifenlose — nie Times als Unfall."
         },
         {
           "line": "color: var(--text);",
-          "mean": "Textfarbe aus der Variable --text holen."
+          "mean": "Nicht die Creme-Farbe hart eintragen: den Namen vom Zettel holen."
         },
         {
           "line": "background: var(--ink);",
-          "mean": "Hintergrund aus der Variable --ink holen."
+          "mean": "Hintergrund vom selben Zettel. Ein Tausch in :root färbt beides um."
         },
         {
           "line": "}",
-          "mean": "Body-Block zu Ende."
+          "mean": "Basis steht. Die Seite hat jetzt Charakter, noch keine Komposition."
         },
         {
           "line": ".atmosphere {",
-          "mean": "Klasse .atmosphere: die Hintergrund-Schicht."
+          "mean": "Die hintere Wand des Raums. Klasse mit Punkt: ein Name, den HTML tragen muss."
         },
         {
           "line": "position: fixed;",
-          "mean": "Bleibt am Bildschirm kleben, scrollt nicht weg."
+          "mean": "Klebt am Fenster. Scrollt der Inhalt, das Licht bleibt."
         },
         {
           "line": "inset: 0;",
-          "mean": "Oben, rechts, unten, links = 0 → füllt alles."
+          "mean": "Oben, rechts, unten, links = 0. Kurzform für: füll alles."
         },
         {
           "line": "z-index: 0;",
-          "mean": "Ganz hinten. Inhalt kommt später mit höherem z-index."
+          "mean": "Hinten. Text bekommt später 1 und tritt davor — wie Kulisse und Schauspieler."
         },
         {
           "line": "pointer-events: none;",
-          "mean": "Klicks gehen durch, nicht auf diese Schicht."
+          "mean": "Diese Wand fängt keine Klicks. Finger gehen durch zum Inhalt."
         },
         {
           "line": "}",
-          "mean": "Atmosphere-Block zu Ende."
+          "mean": "Wand steht."
         },
         {
           "line": ".atmosphere__wash {",
-          "mean": "Die farbige Wäsche innerhalb der Schicht."
+          "mean": "Die Farbwäsche auf der Wand. BEM-Name: gehört zur Atmosphere."
         },
         {
           "line": "position: absolute;",
-          "mean": "Position relativ zur Atmosphere."
+          "mean": "Füllt die Wand, nicht das Fenster selbst."
         },
         {
           "line": "inset: 0;",
@@ -776,31 +776,31 @@ window.SCHRITTE = [
         },
         {
           "line": "background: radial-gradient(",
-          "mean": "Ein runder Farbverlauf beginnt."
+          "mean": "Kein Flächenton: ein Verlauf von einem Kern nach außen."
         },
         {
           "line": "ellipse 80% 70% at 50% 40%,",
-          "mean": "Form und Position des Verlaufs (Mitte, etwas oben)."
+          "mean": "Der Kern sitzt mittig, etwas über der Mitte — wie Licht von vorn."
         },
         {
           "line": "color-mix(in srgb, var(--farbe) var(--helligkeit), transparent),",
-          "mean": "Mischt --farbe mit Transparenz, Stärke = --helligkeit."
+          "mean": "Farbe vom Zettel, Stärke vom Zettel, Rest Luft. Genau deshalb wirken die Regler."
         },
         {
           "line": "rgb(8 10 14 / 0.9)",
-          "mean": "Nach außen wird es fast schwarz."
+          "mean": "Nach außen Nacht. Der Verlauf braucht ein Ende, sonst wirkt er billig."
         },
         {
           "line": ");",
-          "mean": "Verlauf zu Ende."
+          "mean": "Verlauf zu."
         },
         {
           "line": "transition: background 0.5s ease;",
-          "mean": "Farbwechsel dauert 0,5 Sekunden, weich."
+          "mean": "Ein halbe Sekunde weich. Licht springt nicht, es atmet."
         },
         {
           "line": "}",
-          "mean": "Wash-Block zu Ende."
+          "mean": "Wäsche zu. Ab jetzt ist --farbe sichtbar, nicht nur definiert."
         },
         {
           "line": ".brand {",
@@ -1001,7 +1001,7 @@ window.SCHRITTE = [
     "nr": 5,
     "titel": "Steuerelemente (HTML)",
     "ziel": "Farbfeld, Slider, zwei Buttons, RGB-Zeile.",
-    "intro": "<p>Neu: Farbfeld, Slider, zwei Buttons, RGB-Zeile. Noch ohne Logik — erst das HTML.</p>",
+    "intro": "<p><strong>Zuerst die Knöpfe, dann der Strom.</strong> Farbfeld, Slider, zwei Buttons: der Browser bringt sie mit. Die <code>id</code> ist der Name auf dem Klingelschild — JavaScript findet nur, was genau so heißt.</p>",
     "checks": [
       "Farbfeld, Slider und Buttons sind sichtbar",
       "Klicken ändert die Stimmung noch nicht"
@@ -1013,27 +1013,27 @@ window.SCHRITTE = [
       "html": [
         {
           "line": "<!DOCTYPE html>",
-          "mean": "Sagt dem Browser: das ist HTML5."
+          "mean": "Erste Zeile, immer. Heißt: das ist modernes HTML, nicht ein Altdokument."
         },
         {
           "line": "<html lang=\"de\">",
-          "mean": "Die Seite beginnt. lang=de = Inhalt auf Deutsch."
+          "mean": "Die Seite beginnt. lang=de hilft Screenreadern und der Rechtschreibung."
         },
         {
           "line": "<head>",
-          "mean": "Kopf: Infos für den Browser, nicht der sichtbare Text."
+          "mean": "Backstage: Titel, Zeichensatz, Dateien. Hier sieht niemand etwas."
         },
         {
           "line": "<meta charset=\"UTF-8\" />",
-          "mean": "Zeichensatz. Damit ä ö ü ß richtig sind."
+          "mean": "Damit ä, ö, ü und ß nicht als Kringel landen."
         },
         {
           "line": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
-          "mean": "Passt die Seite an die Handy-Breite an."
+          "mean": "Ein Viewport = die Seite nimmt die echte Handybreite, statt winzig zu zoomen."
         },
         {
           "line": "<title>Stimmungslicht — creative</title>",
-          "mean": "Titel im Browser-Tab."
+          "mean": "Was im Tab steht. Auch das ist Teil des ersten Eindrucks."
         },
         {
           "line": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />",
@@ -1061,15 +1061,15 @@ window.SCHRITTE = [
         },
         {
           "line": "<link rel=\"stylesheet\" href=\"styles.css\" />",
-          "mean": "Lädt deine CSS-Datei."
+          "mean": "Hol das Aussehen aus styles.css. Ohne diese Zeile bleibt CSS wirkungslos."
         },
         {
           "line": "</head>",
-          "mean": "Kopf zu Ende."
+          "mean": "Backstage zu. Ab hier kommt, was man sieht."
         },
         {
           "line": "<body>",
-          "mean": "Körper: alles, was du auf der Seite siehst."
+          "mean": "Die Bühne. Alles Sichtbare lebt hier."
         },
         {
           "line": "<div class=\"atmosphere\" aria-hidden=\"true\">",
@@ -1185,133 +1185,133 @@ window.SCHRITTE = [
         },
         {
           "line": "<script src=\"script.js\"></script>",
-          "mean": "Lädt deine JavaScript-Datei."
+          "mean": "Hol das Verhalten aus script.js. Steht am Ende, damit das HTML schon da ist."
         },
         {
           "line": "</body>",
-          "mean": "Körper zu Ende."
+          "mean": "Bühne zu."
         },
         {
           "line": "</html>",
-          "mean": "HTML-Datei zu Ende."
+          "mean": "Datei zu. Nichts mehr danach."
         }
       ],
       "css": [
         {
           "line": ":root {",
-          "mean": "Wurzel der Seite. Hier speicherst du Variablen für überall."
+          "mean": "Der Zettel der ganzen Seite. Was hier steht, gilt überall — ein Ort, nicht sieben Kopien."
         },
         {
           "line": "--farbe: #2a9d8f;",
-          "mean": "Variable --farbe: Teal. Später ändert JavaScript sie."
+          "mean": "Name --farbe, Wert Teal. Später tauscht JS nur diesen Namen, nicht jedes Element."
         },
         {
           "line": "--helligkeit: 70%;",
-          "mean": "Wie stark die Farbe leuchtet (Prozent)."
+          "mean": "Wie stark das Licht steht. Prozent, weil Farbe und Stärke zusammenwirken."
         },
         {
           "line": "--text: #f4f0e8;",
-          "mean": "Textfarbe: warmes Creme."
+          "mean": "Creme auf Dunkel. So bleibt Schrift lesbar, ohne grell zu werden."
         },
         {
           "line": "--ink: #12151a;",
-          "mean": "Hintergrund: fast schwarz."
+          "mean": "Die Nacht der Seite. Fast schwarz, aber nicht drucker-schwarz."
         },
         {
           "line": "}",
-          "mean": "Variablen-Block zu Ende."
+          "mean": "Zettel zu. Die Namen leben weiter, der Block ist nur die Definition."
         },
         {
           "line": "*,",
-          "mean": "* = jedes Element. Das Komma heißt: und außerdem…"
+          "mean": "Sternchen = wirklich jedes Element. Das Komma heißt: und außerdem …"
         },
         {
           "line": "*::before,",
-          "mean": "::before = unsichtbares Pseudo-Element davor (falls vorhanden)."
+          "mean": "Geisterstück vor dem Inhalt, falls CSS eines erzeugt. Auch das muss mitgerechnet werden."
         },
         {
           "line": "*::after {",
-          "mean": "::after = Pseudo-Element danach. { öffnet den Regel-Block."
+          "mean": "Geisterstück danach. { öffnet die gemeinsame Regel für alle drei."
         },
         {
           "line": "box-sizing: border-box;",
-          "mean": "Breite zählt Padding und Rahmen mit. Layout wird einfacher."
+          "mean": "Die Kiste wird von außen gemessen. Futter und Rahmen sind schon in der Breite — sonst rechnet der Browser gegen dich."
         },
         {
           "line": "}",
-          "mean": "Dieser Block ist zu Ende."
+          "mean": "Reset zu. Ab hier darfst du Breiten ernst nehmen."
         },
         {
           "line": "html,",
-          "mean": "Das html-Element, und…"
+          "mean": "Das Dokument selbst, und …"
         },
         {
           "line": "body {",
-          "mean": "das body-Element: beide bekommen dieselben Regeln."
+          "mean": "… die Bühne. Beide: kein Rand, volle Höhe. Sonst bleibt ein Grausaum vom Browser."
         },
         {
           "line": "margin: 0;",
-          "mean": "Keinen Standard-Rand um die Seite."
+          "mean": "Den Standard-Rand abschneiden. Wir bestimmen den Abstand, nicht der Browser."
         },
         {
           "line": "min-height: 100%;",
-          "mean": "Mindestens so hoch wie das Fenster."
+          "mean": "Mindestens so hoch wie das Fenster. Kein halbes Blatt."
         },
         {
           "line": "}",
-          "mean": "Block zu Ende."
+          "mean": "Grundfläche steht."
         },
         {
           "line": "body {",
-          "mean": "Noch einmal body — extra Regeln nur für den sichtbaren Bereich."
+          "mean": "Zweiter Anlauf nur für den body: Schrift, Textfarbe, Hintergrund."
         },
         {
           "line": "font-family: \"Outfit\", sans-serif;",
-          "mean": "Schrift Outfit, sonst irgendeine serifenlose."
+          "mean": "Outfit zuerst. Kommt sie nicht, irgendeine serifenlose — nie Times als Unfall."
         },
         {
           "line": "color: var(--text);",
-          "mean": "Textfarbe aus der Variable --text holen."
+          "mean": "Nicht die Creme-Farbe hart eintragen: den Namen vom Zettel holen."
         },
         {
           "line": "background: var(--ink);",
-          "mean": "Hintergrund aus der Variable --ink holen."
+          "mean": "Hintergrund vom selben Zettel. Ein Tausch in :root färbt beides um."
         },
         {
           "line": "}",
-          "mean": "Body-Block zu Ende."
+          "mean": "Basis steht. Die Seite hat jetzt Charakter, noch keine Komposition."
         },
         {
           "line": ".atmosphere {",
-          "mean": "Klasse .atmosphere: die Hintergrund-Schicht."
+          "mean": "Die hintere Wand des Raums. Klasse mit Punkt: ein Name, den HTML tragen muss."
         },
         {
           "line": "position: fixed;",
-          "mean": "Bleibt am Bildschirm kleben, scrollt nicht weg."
+          "mean": "Klebt am Fenster. Scrollt der Inhalt, das Licht bleibt."
         },
         {
           "line": "inset: 0;",
-          "mean": "Oben, rechts, unten, links = 0 → füllt alles."
+          "mean": "Oben, rechts, unten, links = 0. Kurzform für: füll alles."
         },
         {
           "line": "z-index: 0;",
-          "mean": "Ganz hinten. Inhalt kommt später mit höherem z-index."
+          "mean": "Hinten. Text bekommt später 1 und tritt davor — wie Kulisse und Schauspieler."
         },
         {
           "line": "pointer-events: none;",
-          "mean": "Klicks gehen durch, nicht auf diese Schicht."
+          "mean": "Diese Wand fängt keine Klicks. Finger gehen durch zum Inhalt."
         },
         {
           "line": "}",
-          "mean": "Atmosphere-Block zu Ende."
+          "mean": "Wand steht."
         },
         {
           "line": ".atmosphere__wash {",
-          "mean": "Die farbige Wäsche innerhalb der Schicht."
+          "mean": "Die Farbwäsche auf der Wand. BEM-Name: gehört zur Atmosphere."
         },
         {
           "line": "position: absolute;",
-          "mean": "Position relativ zur Atmosphere."
+          "mean": "Füllt die Wand, nicht das Fenster selbst."
         },
         {
           "line": "inset: 0;",
@@ -1319,31 +1319,31 @@ window.SCHRITTE = [
         },
         {
           "line": "background: radial-gradient(",
-          "mean": "Ein runder Farbverlauf beginnt."
+          "mean": "Kein Flächenton: ein Verlauf von einem Kern nach außen."
         },
         {
           "line": "ellipse 80% 70% at 50% 40%,",
-          "mean": "Form und Position des Verlaufs (Mitte, etwas oben)."
+          "mean": "Der Kern sitzt mittig, etwas über der Mitte — wie Licht von vorn."
         },
         {
           "line": "color-mix(in srgb, var(--farbe) var(--helligkeit), transparent),",
-          "mean": "Mischt --farbe mit Transparenz, Stärke = --helligkeit."
+          "mean": "Farbe vom Zettel, Stärke vom Zettel, Rest Luft. Genau deshalb wirken die Regler."
         },
         {
           "line": "rgb(8 10 14 / 0.9)",
-          "mean": "Nach außen wird es fast schwarz."
+          "mean": "Nach außen Nacht. Der Verlauf braucht ein Ende, sonst wirkt er billig."
         },
         {
           "line": ");",
-          "mean": "Verlauf zu Ende."
+          "mean": "Verlauf zu."
         },
         {
           "line": "transition: background 0.5s ease;",
-          "mean": "Farbwechsel dauert 0,5 Sekunden, weich."
+          "mean": "Ein halbe Sekunde weich. Licht springt nicht, es atmet."
         },
         {
           "line": "}",
-          "mean": "Wash-Block zu Ende."
+          "mean": "Wäsche zu. Ab jetzt ist --farbe sichtbar, nicht nur definiert."
         },
         {
           "line": ".brand {",
@@ -1544,7 +1544,7 @@ window.SCHRITTE = [
     "nr": 6,
     "titel": "Steuerelemente stylen",
     "ziel": "Controls sollen absichtlich aussehen, nicht nach Rohling.",
-    "intro": "<p>Neu: die Controls bekommen Absicht. Buttons, Labels, Abstände.</p>",
+    "intro": "<p><strong>Absicht statt Rohling.</strong> Dieselben Controls, aber sie gehören zur Fläche: Labels wie Beschriftungen an einem Mischpult, ein gefüllter Button, einer nur als Linie.</p>",
     "checks": [
       "Buttons haben klaren Stil",
       "Slider nutzt die Teal-Farbe"
@@ -1556,27 +1556,27 @@ window.SCHRITTE = [
       "html": [
         {
           "line": "<!DOCTYPE html>",
-          "mean": "Sagt dem Browser: das ist HTML5."
+          "mean": "Erste Zeile, immer. Heißt: das ist modernes HTML, nicht ein Altdokument."
         },
         {
           "line": "<html lang=\"de\">",
-          "mean": "Die Seite beginnt. lang=de = Inhalt auf Deutsch."
+          "mean": "Die Seite beginnt. lang=de hilft Screenreadern und der Rechtschreibung."
         },
         {
           "line": "<head>",
-          "mean": "Kopf: Infos für den Browser, nicht der sichtbare Text."
+          "mean": "Backstage: Titel, Zeichensatz, Dateien. Hier sieht niemand etwas."
         },
         {
           "line": "<meta charset=\"UTF-8\" />",
-          "mean": "Zeichensatz. Damit ä ö ü ß richtig sind."
+          "mean": "Damit ä, ö, ü und ß nicht als Kringel landen."
         },
         {
           "line": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
-          "mean": "Passt die Seite an die Handy-Breite an."
+          "mean": "Ein Viewport = die Seite nimmt die echte Handybreite, statt winzig zu zoomen."
         },
         {
           "line": "<title>Stimmungslicht — creative</title>",
-          "mean": "Titel im Browser-Tab."
+          "mean": "Was im Tab steht. Auch das ist Teil des ersten Eindrucks."
         },
         {
           "line": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />",
@@ -1604,15 +1604,15 @@ window.SCHRITTE = [
         },
         {
           "line": "<link rel=\"stylesheet\" href=\"styles.css\" />",
-          "mean": "Lädt deine CSS-Datei."
+          "mean": "Hol das Aussehen aus styles.css. Ohne diese Zeile bleibt CSS wirkungslos."
         },
         {
           "line": "</head>",
-          "mean": "Kopf zu Ende."
+          "mean": "Backstage zu. Ab hier kommt, was man sieht."
         },
         {
           "line": "<body>",
-          "mean": "Körper: alles, was du auf der Seite siehst."
+          "mean": "Die Bühne. Alles Sichtbare lebt hier."
         },
         {
           "line": "<div class=\"atmosphere\" aria-hidden=\"true\">",
@@ -1728,133 +1728,133 @@ window.SCHRITTE = [
         },
         {
           "line": "<script src=\"script.js\"></script>",
-          "mean": "Lädt deine JavaScript-Datei."
+          "mean": "Hol das Verhalten aus script.js. Steht am Ende, damit das HTML schon da ist."
         },
         {
           "line": "</body>",
-          "mean": "Körper zu Ende."
+          "mean": "Bühne zu."
         },
         {
           "line": "</html>",
-          "mean": "HTML-Datei zu Ende."
+          "mean": "Datei zu. Nichts mehr danach."
         }
       ],
       "css": [
         {
           "line": ":root {",
-          "mean": "Wurzel der Seite. Hier speicherst du Variablen für überall."
+          "mean": "Der Zettel der ganzen Seite. Was hier steht, gilt überall — ein Ort, nicht sieben Kopien."
         },
         {
           "line": "--farbe: #2a9d8f;",
-          "mean": "Variable --farbe: Teal. Später ändert JavaScript sie."
+          "mean": "Name --farbe, Wert Teal. Später tauscht JS nur diesen Namen, nicht jedes Element."
         },
         {
           "line": "--helligkeit: 70%;",
-          "mean": "Wie stark die Farbe leuchtet (Prozent)."
+          "mean": "Wie stark das Licht steht. Prozent, weil Farbe und Stärke zusammenwirken."
         },
         {
           "line": "--text: #f4f0e8;",
-          "mean": "Textfarbe: warmes Creme."
+          "mean": "Creme auf Dunkel. So bleibt Schrift lesbar, ohne grell zu werden."
         },
         {
           "line": "--ink: #12151a;",
-          "mean": "Hintergrund: fast schwarz."
+          "mean": "Die Nacht der Seite. Fast schwarz, aber nicht drucker-schwarz."
         },
         {
           "line": "}",
-          "mean": "Variablen-Block zu Ende."
+          "mean": "Zettel zu. Die Namen leben weiter, der Block ist nur die Definition."
         },
         {
           "line": "*,",
-          "mean": "* = jedes Element. Das Komma heißt: und außerdem…"
+          "mean": "Sternchen = wirklich jedes Element. Das Komma heißt: und außerdem …"
         },
         {
           "line": "*::before,",
-          "mean": "::before = unsichtbares Pseudo-Element davor (falls vorhanden)."
+          "mean": "Geisterstück vor dem Inhalt, falls CSS eines erzeugt. Auch das muss mitgerechnet werden."
         },
         {
           "line": "*::after {",
-          "mean": "::after = Pseudo-Element danach. { öffnet den Regel-Block."
+          "mean": "Geisterstück danach. { öffnet die gemeinsame Regel für alle drei."
         },
         {
           "line": "box-sizing: border-box;",
-          "mean": "Breite zählt Padding und Rahmen mit. Layout wird einfacher."
+          "mean": "Die Kiste wird von außen gemessen. Futter und Rahmen sind schon in der Breite — sonst rechnet der Browser gegen dich."
         },
         {
           "line": "}",
-          "mean": "Dieser Block ist zu Ende."
+          "mean": "Reset zu. Ab hier darfst du Breiten ernst nehmen."
         },
         {
           "line": "html,",
-          "mean": "Das html-Element, und…"
+          "mean": "Das Dokument selbst, und …"
         },
         {
           "line": "body {",
-          "mean": "das body-Element: beide bekommen dieselben Regeln."
+          "mean": "… die Bühne. Beide: kein Rand, volle Höhe. Sonst bleibt ein Grausaum vom Browser."
         },
         {
           "line": "margin: 0;",
-          "mean": "Keinen Standard-Rand um die Seite."
+          "mean": "Den Standard-Rand abschneiden. Wir bestimmen den Abstand, nicht der Browser."
         },
         {
           "line": "min-height: 100%;",
-          "mean": "Mindestens so hoch wie das Fenster."
+          "mean": "Mindestens so hoch wie das Fenster. Kein halbes Blatt."
         },
         {
           "line": "}",
-          "mean": "Block zu Ende."
+          "mean": "Grundfläche steht."
         },
         {
           "line": "body {",
-          "mean": "Noch einmal body — extra Regeln nur für den sichtbaren Bereich."
+          "mean": "Zweiter Anlauf nur für den body: Schrift, Textfarbe, Hintergrund."
         },
         {
           "line": "font-family: \"Outfit\", sans-serif;",
-          "mean": "Schrift Outfit, sonst irgendeine serifenlose."
+          "mean": "Outfit zuerst. Kommt sie nicht, irgendeine serifenlose — nie Times als Unfall."
         },
         {
           "line": "color: var(--text);",
-          "mean": "Textfarbe aus der Variable --text holen."
+          "mean": "Nicht die Creme-Farbe hart eintragen: den Namen vom Zettel holen."
         },
         {
           "line": "background: var(--ink);",
-          "mean": "Hintergrund aus der Variable --ink holen."
+          "mean": "Hintergrund vom selben Zettel. Ein Tausch in :root färbt beides um."
         },
         {
           "line": "}",
-          "mean": "Body-Block zu Ende."
+          "mean": "Basis steht. Die Seite hat jetzt Charakter, noch keine Komposition."
         },
         {
           "line": ".atmosphere {",
-          "mean": "Klasse .atmosphere: die Hintergrund-Schicht."
+          "mean": "Die hintere Wand des Raums. Klasse mit Punkt: ein Name, den HTML tragen muss."
         },
         {
           "line": "position: fixed;",
-          "mean": "Bleibt am Bildschirm kleben, scrollt nicht weg."
+          "mean": "Klebt am Fenster. Scrollt der Inhalt, das Licht bleibt."
         },
         {
           "line": "inset: 0;",
-          "mean": "Oben, rechts, unten, links = 0 → füllt alles."
+          "mean": "Oben, rechts, unten, links = 0. Kurzform für: füll alles."
         },
         {
           "line": "z-index: 0;",
-          "mean": "Ganz hinten. Inhalt kommt später mit höherem z-index."
+          "mean": "Hinten. Text bekommt später 1 und tritt davor — wie Kulisse und Schauspieler."
         },
         {
           "line": "pointer-events: none;",
-          "mean": "Klicks gehen durch, nicht auf diese Schicht."
+          "mean": "Diese Wand fängt keine Klicks. Finger gehen durch zum Inhalt."
         },
         {
           "line": "}",
-          "mean": "Atmosphere-Block zu Ende."
+          "mean": "Wand steht."
         },
         {
           "line": ".atmosphere__wash {",
-          "mean": "Die farbige Wäsche innerhalb der Schicht."
+          "mean": "Die Farbwäsche auf der Wand. BEM-Name: gehört zur Atmosphere."
         },
         {
           "line": "position: absolute;",
-          "mean": "Position relativ zur Atmosphere."
+          "mean": "Füllt die Wand, nicht das Fenster selbst."
         },
         {
           "line": "inset: 0;",
@@ -1862,31 +1862,31 @@ window.SCHRITTE = [
         },
         {
           "line": "background: radial-gradient(",
-          "mean": "Ein runder Farbverlauf beginnt."
+          "mean": "Kein Flächenton: ein Verlauf von einem Kern nach außen."
         },
         {
           "line": "ellipse 80% 70% at 50% 40%,",
-          "mean": "Form und Position des Verlaufs (Mitte, etwas oben)."
+          "mean": "Der Kern sitzt mittig, etwas über der Mitte — wie Licht von vorn."
         },
         {
           "line": "color-mix(in srgb, var(--farbe) var(--helligkeit), transparent),",
-          "mean": "Mischt --farbe mit Transparenz, Stärke = --helligkeit."
+          "mean": "Farbe vom Zettel, Stärke vom Zettel, Rest Luft. Genau deshalb wirken die Regler."
         },
         {
           "line": "rgb(8 10 14 / 0.9)",
-          "mean": "Nach außen wird es fast schwarz."
+          "mean": "Nach außen Nacht. Der Verlauf braucht ein Ende, sonst wirkt er billig."
         },
         {
           "line": ");",
-          "mean": "Verlauf zu Ende."
+          "mean": "Verlauf zu."
         },
         {
           "line": "transition: background 0.5s ease;",
-          "mean": "Farbwechsel dauert 0,5 Sekunden, weich."
+          "mean": "Ein halbe Sekunde weich. Licht springt nicht, es atmet."
         },
         {
           "line": "}",
-          "mean": "Wash-Block zu Ende."
+          "mean": "Wäsche zu. Ab jetzt ist --farbe sichtbar, nicht nur definiert."
         },
         {
           "line": ".brand {",
@@ -2335,7 +2335,7 @@ window.SCHRITTE = [
     "nr": 7,
     "titel": "JavaScript: Farbe",
     "ziel": "Farbwahl schreibt --farbe — der Glow folgt.",
-    "intro": "<p>Neu: JavaScript. Die Farbe schreibt die CSS-Variable <code>--farbe</code>.</p>",
+    "intro": "<p><strong>JavaScript ist der Dimmer.</strong> Du hörst auf das Farbfeld, schreibst <code>--farbe</code> auf den Zettel — CSS macht das Licht. Drei Schritte, immer dieselben: Element holen, zuhören, Variable setzen.</p>",
     "checks": [
       "Farbe ändern → Glow ändert sich",
       "Keine Abstürze"
@@ -2347,27 +2347,27 @@ window.SCHRITTE = [
       "html": [
         {
           "line": "<!DOCTYPE html>",
-          "mean": "Sagt dem Browser: das ist HTML5."
+          "mean": "Erste Zeile, immer. Heißt: das ist modernes HTML, nicht ein Altdokument."
         },
         {
           "line": "<html lang=\"de\">",
-          "mean": "Die Seite beginnt. lang=de = Inhalt auf Deutsch."
+          "mean": "Die Seite beginnt. lang=de hilft Screenreadern und der Rechtschreibung."
         },
         {
           "line": "<head>",
-          "mean": "Kopf: Infos für den Browser, nicht der sichtbare Text."
+          "mean": "Backstage: Titel, Zeichensatz, Dateien. Hier sieht niemand etwas."
         },
         {
           "line": "<meta charset=\"UTF-8\" />",
-          "mean": "Zeichensatz. Damit ä ö ü ß richtig sind."
+          "mean": "Damit ä, ö, ü und ß nicht als Kringel landen."
         },
         {
           "line": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
-          "mean": "Passt die Seite an die Handy-Breite an."
+          "mean": "Ein Viewport = die Seite nimmt die echte Handybreite, statt winzig zu zoomen."
         },
         {
           "line": "<title>Stimmungslicht — creative</title>",
-          "mean": "Titel im Browser-Tab."
+          "mean": "Was im Tab steht. Auch das ist Teil des ersten Eindrucks."
         },
         {
           "line": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />",
@@ -2395,15 +2395,15 @@ window.SCHRITTE = [
         },
         {
           "line": "<link rel=\"stylesheet\" href=\"styles.css\" />",
-          "mean": "Lädt deine CSS-Datei."
+          "mean": "Hol das Aussehen aus styles.css. Ohne diese Zeile bleibt CSS wirkungslos."
         },
         {
           "line": "</head>",
-          "mean": "Kopf zu Ende."
+          "mean": "Backstage zu. Ab hier kommt, was man sieht."
         },
         {
           "line": "<body>",
-          "mean": "Körper: alles, was du auf der Seite siehst."
+          "mean": "Die Bühne. Alles Sichtbare lebt hier."
         },
         {
           "line": "<div class=\"atmosphere\" aria-hidden=\"true\">",
@@ -2519,133 +2519,133 @@ window.SCHRITTE = [
         },
         {
           "line": "<script src=\"script.js\"></script>",
-          "mean": "Lädt deine JavaScript-Datei."
+          "mean": "Hol das Verhalten aus script.js. Steht am Ende, damit das HTML schon da ist."
         },
         {
           "line": "</body>",
-          "mean": "Körper zu Ende."
+          "mean": "Bühne zu."
         },
         {
           "line": "</html>",
-          "mean": "HTML-Datei zu Ende."
+          "mean": "Datei zu. Nichts mehr danach."
         }
       ],
       "css": [
         {
           "line": ":root {",
-          "mean": "Wurzel der Seite. Hier speicherst du Variablen für überall."
+          "mean": "Der Zettel der ganzen Seite. Was hier steht, gilt überall — ein Ort, nicht sieben Kopien."
         },
         {
           "line": "--farbe: #2a9d8f;",
-          "mean": "Variable --farbe: Teal. Später ändert JavaScript sie."
+          "mean": "Name --farbe, Wert Teal. Später tauscht JS nur diesen Namen, nicht jedes Element."
         },
         {
           "line": "--helligkeit: 70%;",
-          "mean": "Wie stark die Farbe leuchtet (Prozent)."
+          "mean": "Wie stark das Licht steht. Prozent, weil Farbe und Stärke zusammenwirken."
         },
         {
           "line": "--text: #f4f0e8;",
-          "mean": "Textfarbe: warmes Creme."
+          "mean": "Creme auf Dunkel. So bleibt Schrift lesbar, ohne grell zu werden."
         },
         {
           "line": "--ink: #12151a;",
-          "mean": "Hintergrund: fast schwarz."
+          "mean": "Die Nacht der Seite. Fast schwarz, aber nicht drucker-schwarz."
         },
         {
           "line": "}",
-          "mean": "Variablen-Block zu Ende."
+          "mean": "Zettel zu. Die Namen leben weiter, der Block ist nur die Definition."
         },
         {
           "line": "*,",
-          "mean": "* = jedes Element. Das Komma heißt: und außerdem…"
+          "mean": "Sternchen = wirklich jedes Element. Das Komma heißt: und außerdem …"
         },
         {
           "line": "*::before,",
-          "mean": "::before = unsichtbares Pseudo-Element davor (falls vorhanden)."
+          "mean": "Geisterstück vor dem Inhalt, falls CSS eines erzeugt. Auch das muss mitgerechnet werden."
         },
         {
           "line": "*::after {",
-          "mean": "::after = Pseudo-Element danach. { öffnet den Regel-Block."
+          "mean": "Geisterstück danach. { öffnet die gemeinsame Regel für alle drei."
         },
         {
           "line": "box-sizing: border-box;",
-          "mean": "Breite zählt Padding und Rahmen mit. Layout wird einfacher."
+          "mean": "Die Kiste wird von außen gemessen. Futter und Rahmen sind schon in der Breite — sonst rechnet der Browser gegen dich."
         },
         {
           "line": "}",
-          "mean": "Dieser Block ist zu Ende."
+          "mean": "Reset zu. Ab hier darfst du Breiten ernst nehmen."
         },
         {
           "line": "html,",
-          "mean": "Das html-Element, und…"
+          "mean": "Das Dokument selbst, und …"
         },
         {
           "line": "body {",
-          "mean": "das body-Element: beide bekommen dieselben Regeln."
+          "mean": "… die Bühne. Beide: kein Rand, volle Höhe. Sonst bleibt ein Grausaum vom Browser."
         },
         {
           "line": "margin: 0;",
-          "mean": "Keinen Standard-Rand um die Seite."
+          "mean": "Den Standard-Rand abschneiden. Wir bestimmen den Abstand, nicht der Browser."
         },
         {
           "line": "min-height: 100%;",
-          "mean": "Mindestens so hoch wie das Fenster."
+          "mean": "Mindestens so hoch wie das Fenster. Kein halbes Blatt."
         },
         {
           "line": "}",
-          "mean": "Block zu Ende."
+          "mean": "Grundfläche steht."
         },
         {
           "line": "body {",
-          "mean": "Noch einmal body — extra Regeln nur für den sichtbaren Bereich."
+          "mean": "Zweiter Anlauf nur für den body: Schrift, Textfarbe, Hintergrund."
         },
         {
           "line": "font-family: \"Outfit\", sans-serif;",
-          "mean": "Schrift Outfit, sonst irgendeine serifenlose."
+          "mean": "Outfit zuerst. Kommt sie nicht, irgendeine serifenlose — nie Times als Unfall."
         },
         {
           "line": "color: var(--text);",
-          "mean": "Textfarbe aus der Variable --text holen."
+          "mean": "Nicht die Creme-Farbe hart eintragen: den Namen vom Zettel holen."
         },
         {
           "line": "background: var(--ink);",
-          "mean": "Hintergrund aus der Variable --ink holen."
+          "mean": "Hintergrund vom selben Zettel. Ein Tausch in :root färbt beides um."
         },
         {
           "line": "}",
-          "mean": "Body-Block zu Ende."
+          "mean": "Basis steht. Die Seite hat jetzt Charakter, noch keine Komposition."
         },
         {
           "line": ".atmosphere {",
-          "mean": "Klasse .atmosphere: die Hintergrund-Schicht."
+          "mean": "Die hintere Wand des Raums. Klasse mit Punkt: ein Name, den HTML tragen muss."
         },
         {
           "line": "position: fixed;",
-          "mean": "Bleibt am Bildschirm kleben, scrollt nicht weg."
+          "mean": "Klebt am Fenster. Scrollt der Inhalt, das Licht bleibt."
         },
         {
           "line": "inset: 0;",
-          "mean": "Oben, rechts, unten, links = 0 → füllt alles."
+          "mean": "Oben, rechts, unten, links = 0. Kurzform für: füll alles."
         },
         {
           "line": "z-index: 0;",
-          "mean": "Ganz hinten. Inhalt kommt später mit höherem z-index."
+          "mean": "Hinten. Text bekommt später 1 und tritt davor — wie Kulisse und Schauspieler."
         },
         {
           "line": "pointer-events: none;",
-          "mean": "Klicks gehen durch, nicht auf diese Schicht."
+          "mean": "Diese Wand fängt keine Klicks. Finger gehen durch zum Inhalt."
         },
         {
           "line": "}",
-          "mean": "Atmosphere-Block zu Ende."
+          "mean": "Wand steht."
         },
         {
           "line": ".atmosphere__wash {",
-          "mean": "Die farbige Wäsche innerhalb der Schicht."
+          "mean": "Die Farbwäsche auf der Wand. BEM-Name: gehört zur Atmosphere."
         },
         {
           "line": "position: absolute;",
-          "mean": "Position relativ zur Atmosphere."
+          "mean": "Füllt die Wand, nicht das Fenster selbst."
         },
         {
           "line": "inset: 0;",
@@ -2653,31 +2653,31 @@ window.SCHRITTE = [
         },
         {
           "line": "background: radial-gradient(",
-          "mean": "Ein runder Farbverlauf beginnt."
+          "mean": "Kein Flächenton: ein Verlauf von einem Kern nach außen."
         },
         {
           "line": "ellipse 80% 70% at 50% 40%,",
-          "mean": "Form und Position des Verlaufs (Mitte, etwas oben)."
+          "mean": "Der Kern sitzt mittig, etwas über der Mitte — wie Licht von vorn."
         },
         {
           "line": "color-mix(in srgb, var(--farbe) var(--helligkeit), transparent),",
-          "mean": "Mischt --farbe mit Transparenz, Stärke = --helligkeit."
+          "mean": "Farbe vom Zettel, Stärke vom Zettel, Rest Luft. Genau deshalb wirken die Regler."
         },
         {
           "line": "rgb(8 10 14 / 0.9)",
-          "mean": "Nach außen wird es fast schwarz."
+          "mean": "Nach außen Nacht. Der Verlauf braucht ein Ende, sonst wirkt er billig."
         },
         {
           "line": ");",
-          "mean": "Verlauf zu Ende."
+          "mean": "Verlauf zu."
         },
         {
           "line": "transition: background 0.5s ease;",
-          "mean": "Farbwechsel dauert 0,5 Sekunden, weich."
+          "mean": "Ein halbe Sekunde weich. Licht springt nicht, es atmet."
         },
         {
           "line": "}",
-          "mean": "Wash-Block zu Ende."
+          "mean": "Wäsche zu. Ab jetzt ist --farbe sichtbar, nicht nur definiert."
         },
         {
           "line": ".brand {",
@@ -3123,67 +3123,67 @@ window.SCHRITTE = [
       "js": [
         {
           "line": "const DEFAULT_COLOR = \"#2a9d8f\";",
-          "mean": "Startfarbe Teal, als Konstante (ändert sich nicht)."
+          "mean": "Die Heimfarbe. const = dieser Wert bleibt, wir überschreiben ihn nicht."
         },
         {
           "line": "const DEFAULT_BRIGHTNESS = 70;",
-          "mean": "Start-Helligkeit 70."
+          "mean": "Die Heim-Helligkeit. Zwei Konstanten, ein Reset-Ziel."
         },
         {
           "line": "const root = document.documentElement;",
-          "mean": "Das <html>-Element. Dort setzen wir CSS-Variablen."
+          "mean": "Das <html>-Element. Genau dort leben die CSS-Zettel --farbe und --helligkeit."
         },
         {
           "line": "const colorInput = document.getElementById(\"color\");",
-          "mean": "Holt das Farbfeld mit id=color."
+          "mean": "Klingelschild color. Ohne exakt diese id ist das Feld unsichtbar für JS."
         },
         {
           "line": "const brightnessInput = document.getElementById(\"brightness\");",
-          "mean": "Holt den Slider mit id=brightness."
+          "mean": "Dasselbe für den Slider. Merke: HTML-id und dieser String müssen identisch sein."
         },
         {
           "line": "function applyMood(color, brightness) {",
-          "mean": "Funktion: Stimmung anwenden. Bekommt Farbe und Helligkeit."
+          "mean": "Ein Schalter für beides. Eine Funktion, zwei Werte — nicht sieben Copy-Pastes."
         },
         {
           "line": "root.style.setProperty(\"--farbe\", color);",
-          "mean": "Schreibt --farbe in CSS. Die Seite färbt sich."
+          "mean": "Schreib den Zettel um. CSS hört zu, der Glow folgt."
         },
         {
           "line": "root.style.setProperty(\"--helligkeit\", `${brightness}%`);",
-          "mean": "Schreibt --helligkeit, mit % am Ende."
+          "mean": "Helligkeit braucht das %. Template-String: Zahl rein, Prozent dran."
         },
         {
           "line": "colorInput.value = color;",
-          "mean": "Farbfeld auf denselben Wert stellen."
+          "mean": "Das Farbfeld soll zeigen, was wirklich gilt — sonst lügen Steuerung und Bild."
         },
         {
           "line": "brightnessInput.value = String(brightness);",
-          "mean": "Slider-Wert als Text setzen (Inputs wollen Strings)."
+          "mean": "Inputs wollen Text. String() macht aus 70 das \"70\"."
         },
         {
           "line": "}",
-          "mean": "applyMood zu Ende."
+          "mean": "Schalter zu. Alles, was die Stimmung ändert, soll irgendwann hier durch."
         },
         {
           "line": "function onColorChange(event) {",
-          "mean": "Läuft, sobald sich die Farbe ändert."
+          "mean": "Der Moment, in dem jemand die Farbe anfasst."
         },
         {
           "line": "applyMood(event.target.value, Number(brightnessInput.value));",
-          "mean": "Neue Farbe + aktuelle Helligkeit übernehmen."
+          "mean": "Neue Farbe, alte Helligkeit. Number macht aus dem Slider-Text eine Zahl."
         },
         {
           "line": "}",
-          "mean": "onColorChange zu Ende."
+          "mean": "Farb-Hörer zu."
         },
         {
           "line": "colorInput.addEventListener(\"input\", onColorChange);",
-          "mean": "Hört auf jede Bewegung im Farbfeld."
+          "mean": "input = bei jeder Bewegung, nicht erst beim Loslassen."
         },
         {
           "line": "applyMood(DEFAULT_COLOR, DEFAULT_BRIGHTNESS);",
-          "mean": "Beim Laden einmal die Startstimmung setzen."
+          "mean": "Beim Laden einmal den Schalter umlegen, sonst startet die Seite stumm."
         }
       ]
     }
@@ -3192,7 +3192,7 @@ window.SCHRITTE = [
     "nr": 8,
     "titel": "Helligkeit verbinden",
     "ziel": "Der Slider steuert --helligkeit.",
-    "intro": "<p>Neu: der Slider hängt an <code>--helligkeit</code>. Gleiches Muster wie die Farbe.</p>",
+    "intro": "<p><strong>Gleiches Muster, anderer Regler.</strong> Was die Farbe kann, kann die Helligkeit. Ein Slider, ein Listener, dieselbe Funktion <code>applyMood</code>. Wenn du das einmal siehst, siehst du es überall.</p>",
     "checks": [
       "Slider nach links: Glow schwächer",
       "Slider nach rechts: Glow stärker"
@@ -3204,27 +3204,27 @@ window.SCHRITTE = [
       "html": [
         {
           "line": "<!DOCTYPE html>",
-          "mean": "Sagt dem Browser: das ist HTML5."
+          "mean": "Erste Zeile, immer. Heißt: das ist modernes HTML, nicht ein Altdokument."
         },
         {
           "line": "<html lang=\"de\">",
-          "mean": "Die Seite beginnt. lang=de = Inhalt auf Deutsch."
+          "mean": "Die Seite beginnt. lang=de hilft Screenreadern und der Rechtschreibung."
         },
         {
           "line": "<head>",
-          "mean": "Kopf: Infos für den Browser, nicht der sichtbare Text."
+          "mean": "Backstage: Titel, Zeichensatz, Dateien. Hier sieht niemand etwas."
         },
         {
           "line": "<meta charset=\"UTF-8\" />",
-          "mean": "Zeichensatz. Damit ä ö ü ß richtig sind."
+          "mean": "Damit ä, ö, ü und ß nicht als Kringel landen."
         },
         {
           "line": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
-          "mean": "Passt die Seite an die Handy-Breite an."
+          "mean": "Ein Viewport = die Seite nimmt die echte Handybreite, statt winzig zu zoomen."
         },
         {
           "line": "<title>Stimmungslicht — creative</title>",
-          "mean": "Titel im Browser-Tab."
+          "mean": "Was im Tab steht. Auch das ist Teil des ersten Eindrucks."
         },
         {
           "line": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />",
@@ -3252,15 +3252,15 @@ window.SCHRITTE = [
         },
         {
           "line": "<link rel=\"stylesheet\" href=\"styles.css\" />",
-          "mean": "Lädt deine CSS-Datei."
+          "mean": "Hol das Aussehen aus styles.css. Ohne diese Zeile bleibt CSS wirkungslos."
         },
         {
           "line": "</head>",
-          "mean": "Kopf zu Ende."
+          "mean": "Backstage zu. Ab hier kommt, was man sieht."
         },
         {
           "line": "<body>",
-          "mean": "Körper: alles, was du auf der Seite siehst."
+          "mean": "Die Bühne. Alles Sichtbare lebt hier."
         },
         {
           "line": "<div class=\"atmosphere\" aria-hidden=\"true\">",
@@ -3376,133 +3376,133 @@ window.SCHRITTE = [
         },
         {
           "line": "<script src=\"script.js\"></script>",
-          "mean": "Lädt deine JavaScript-Datei."
+          "mean": "Hol das Verhalten aus script.js. Steht am Ende, damit das HTML schon da ist."
         },
         {
           "line": "</body>",
-          "mean": "Körper zu Ende."
+          "mean": "Bühne zu."
         },
         {
           "line": "</html>",
-          "mean": "HTML-Datei zu Ende."
+          "mean": "Datei zu. Nichts mehr danach."
         }
       ],
       "css": [
         {
           "line": ":root {",
-          "mean": "Wurzel der Seite. Hier speicherst du Variablen für überall."
+          "mean": "Der Zettel der ganzen Seite. Was hier steht, gilt überall — ein Ort, nicht sieben Kopien."
         },
         {
           "line": "--farbe: #2a9d8f;",
-          "mean": "Variable --farbe: Teal. Später ändert JavaScript sie."
+          "mean": "Name --farbe, Wert Teal. Später tauscht JS nur diesen Namen, nicht jedes Element."
         },
         {
           "line": "--helligkeit: 70%;",
-          "mean": "Wie stark die Farbe leuchtet (Prozent)."
+          "mean": "Wie stark das Licht steht. Prozent, weil Farbe und Stärke zusammenwirken."
         },
         {
           "line": "--text: #f4f0e8;",
-          "mean": "Textfarbe: warmes Creme."
+          "mean": "Creme auf Dunkel. So bleibt Schrift lesbar, ohne grell zu werden."
         },
         {
           "line": "--ink: #12151a;",
-          "mean": "Hintergrund: fast schwarz."
+          "mean": "Die Nacht der Seite. Fast schwarz, aber nicht drucker-schwarz."
         },
         {
           "line": "}",
-          "mean": "Variablen-Block zu Ende."
+          "mean": "Zettel zu. Die Namen leben weiter, der Block ist nur die Definition."
         },
         {
           "line": "*,",
-          "mean": "* = jedes Element. Das Komma heißt: und außerdem…"
+          "mean": "Sternchen = wirklich jedes Element. Das Komma heißt: und außerdem …"
         },
         {
           "line": "*::before,",
-          "mean": "::before = unsichtbares Pseudo-Element davor (falls vorhanden)."
+          "mean": "Geisterstück vor dem Inhalt, falls CSS eines erzeugt. Auch das muss mitgerechnet werden."
         },
         {
           "line": "*::after {",
-          "mean": "::after = Pseudo-Element danach. { öffnet den Regel-Block."
+          "mean": "Geisterstück danach. { öffnet die gemeinsame Regel für alle drei."
         },
         {
           "line": "box-sizing: border-box;",
-          "mean": "Breite zählt Padding und Rahmen mit. Layout wird einfacher."
+          "mean": "Die Kiste wird von außen gemessen. Futter und Rahmen sind schon in der Breite — sonst rechnet der Browser gegen dich."
         },
         {
           "line": "}",
-          "mean": "Dieser Block ist zu Ende."
+          "mean": "Reset zu. Ab hier darfst du Breiten ernst nehmen."
         },
         {
           "line": "html,",
-          "mean": "Das html-Element, und…"
+          "mean": "Das Dokument selbst, und …"
         },
         {
           "line": "body {",
-          "mean": "das body-Element: beide bekommen dieselben Regeln."
+          "mean": "… die Bühne. Beide: kein Rand, volle Höhe. Sonst bleibt ein Grausaum vom Browser."
         },
         {
           "line": "margin: 0;",
-          "mean": "Keinen Standard-Rand um die Seite."
+          "mean": "Den Standard-Rand abschneiden. Wir bestimmen den Abstand, nicht der Browser."
         },
         {
           "line": "min-height: 100%;",
-          "mean": "Mindestens so hoch wie das Fenster."
+          "mean": "Mindestens so hoch wie das Fenster. Kein halbes Blatt."
         },
         {
           "line": "}",
-          "mean": "Block zu Ende."
+          "mean": "Grundfläche steht."
         },
         {
           "line": "body {",
-          "mean": "Noch einmal body — extra Regeln nur für den sichtbaren Bereich."
+          "mean": "Zweiter Anlauf nur für den body: Schrift, Textfarbe, Hintergrund."
         },
         {
           "line": "font-family: \"Outfit\", sans-serif;",
-          "mean": "Schrift Outfit, sonst irgendeine serifenlose."
+          "mean": "Outfit zuerst. Kommt sie nicht, irgendeine serifenlose — nie Times als Unfall."
         },
         {
           "line": "color: var(--text);",
-          "mean": "Textfarbe aus der Variable --text holen."
+          "mean": "Nicht die Creme-Farbe hart eintragen: den Namen vom Zettel holen."
         },
         {
           "line": "background: var(--ink);",
-          "mean": "Hintergrund aus der Variable --ink holen."
+          "mean": "Hintergrund vom selben Zettel. Ein Tausch in :root färbt beides um."
         },
         {
           "line": "}",
-          "mean": "Body-Block zu Ende."
+          "mean": "Basis steht. Die Seite hat jetzt Charakter, noch keine Komposition."
         },
         {
           "line": ".atmosphere {",
-          "mean": "Klasse .atmosphere: die Hintergrund-Schicht."
+          "mean": "Die hintere Wand des Raums. Klasse mit Punkt: ein Name, den HTML tragen muss."
         },
         {
           "line": "position: fixed;",
-          "mean": "Bleibt am Bildschirm kleben, scrollt nicht weg."
+          "mean": "Klebt am Fenster. Scrollt der Inhalt, das Licht bleibt."
         },
         {
           "line": "inset: 0;",
-          "mean": "Oben, rechts, unten, links = 0 → füllt alles."
+          "mean": "Oben, rechts, unten, links = 0. Kurzform für: füll alles."
         },
         {
           "line": "z-index: 0;",
-          "mean": "Ganz hinten. Inhalt kommt später mit höherem z-index."
+          "mean": "Hinten. Text bekommt später 1 und tritt davor — wie Kulisse und Schauspieler."
         },
         {
           "line": "pointer-events: none;",
-          "mean": "Klicks gehen durch, nicht auf diese Schicht."
+          "mean": "Diese Wand fängt keine Klicks. Finger gehen durch zum Inhalt."
         },
         {
           "line": "}",
-          "mean": "Atmosphere-Block zu Ende."
+          "mean": "Wand steht."
         },
         {
           "line": ".atmosphere__wash {",
-          "mean": "Die farbige Wäsche innerhalb der Schicht."
+          "mean": "Die Farbwäsche auf der Wand. BEM-Name: gehört zur Atmosphere."
         },
         {
           "line": "position: absolute;",
-          "mean": "Position relativ zur Atmosphere."
+          "mean": "Füllt die Wand, nicht das Fenster selbst."
         },
         {
           "line": "inset: 0;",
@@ -3510,31 +3510,31 @@ window.SCHRITTE = [
         },
         {
           "line": "background: radial-gradient(",
-          "mean": "Ein runder Farbverlauf beginnt."
+          "mean": "Kein Flächenton: ein Verlauf von einem Kern nach außen."
         },
         {
           "line": "ellipse 80% 70% at 50% 40%,",
-          "mean": "Form und Position des Verlaufs (Mitte, etwas oben)."
+          "mean": "Der Kern sitzt mittig, etwas über der Mitte — wie Licht von vorn."
         },
         {
           "line": "color-mix(in srgb, var(--farbe) var(--helligkeit), transparent),",
-          "mean": "Mischt --farbe mit Transparenz, Stärke = --helligkeit."
+          "mean": "Farbe vom Zettel, Stärke vom Zettel, Rest Luft. Genau deshalb wirken die Regler."
         },
         {
           "line": "rgb(8 10 14 / 0.9)",
-          "mean": "Nach außen wird es fast schwarz."
+          "mean": "Nach außen Nacht. Der Verlauf braucht ein Ende, sonst wirkt er billig."
         },
         {
           "line": ");",
-          "mean": "Verlauf zu Ende."
+          "mean": "Verlauf zu."
         },
         {
           "line": "transition: background 0.5s ease;",
-          "mean": "Farbwechsel dauert 0,5 Sekunden, weich."
+          "mean": "Ein halbe Sekunde weich. Licht springt nicht, es atmet."
         },
         {
           "line": "}",
-          "mean": "Wash-Block zu Ende."
+          "mean": "Wäsche zu. Ab jetzt ist --farbe sichtbar, nicht nur definiert."
         },
         {
           "line": ".brand {",
@@ -3980,67 +3980,67 @@ window.SCHRITTE = [
       "js": [
         {
           "line": "const DEFAULT_COLOR = \"#2a9d8f\";",
-          "mean": "Startfarbe Teal, als Konstante (ändert sich nicht)."
+          "mean": "Die Heimfarbe. const = dieser Wert bleibt, wir überschreiben ihn nicht."
         },
         {
           "line": "const DEFAULT_BRIGHTNESS = 70;",
-          "mean": "Start-Helligkeit 70."
+          "mean": "Die Heim-Helligkeit. Zwei Konstanten, ein Reset-Ziel."
         },
         {
           "line": "const root = document.documentElement;",
-          "mean": "Das <html>-Element. Dort setzen wir CSS-Variablen."
+          "mean": "Das <html>-Element. Genau dort leben die CSS-Zettel --farbe und --helligkeit."
         },
         {
           "line": "const colorInput = document.getElementById(\"color\");",
-          "mean": "Holt das Farbfeld mit id=color."
+          "mean": "Klingelschild color. Ohne exakt diese id ist das Feld unsichtbar für JS."
         },
         {
           "line": "const brightnessInput = document.getElementById(\"brightness\");",
-          "mean": "Holt den Slider mit id=brightness."
+          "mean": "Dasselbe für den Slider. Merke: HTML-id und dieser String müssen identisch sein."
         },
         {
           "line": "function applyMood(color, brightness) {",
-          "mean": "Funktion: Stimmung anwenden. Bekommt Farbe und Helligkeit."
+          "mean": "Ein Schalter für beides. Eine Funktion, zwei Werte — nicht sieben Copy-Pastes."
         },
         {
           "line": "root.style.setProperty(\"--farbe\", color);",
-          "mean": "Schreibt --farbe in CSS. Die Seite färbt sich."
+          "mean": "Schreib den Zettel um. CSS hört zu, der Glow folgt."
         },
         {
           "line": "root.style.setProperty(\"--helligkeit\", `${brightness}%`);",
-          "mean": "Schreibt --helligkeit, mit % am Ende."
+          "mean": "Helligkeit braucht das %. Template-String: Zahl rein, Prozent dran."
         },
         {
           "line": "colorInput.value = color;",
-          "mean": "Farbfeld auf denselben Wert stellen."
+          "mean": "Das Farbfeld soll zeigen, was wirklich gilt — sonst lügen Steuerung und Bild."
         },
         {
           "line": "brightnessInput.value = String(brightness);",
-          "mean": "Slider-Wert als Text setzen (Inputs wollen Strings)."
+          "mean": "Inputs wollen Text. String() macht aus 70 das \"70\"."
         },
         {
           "line": "}",
-          "mean": "applyMood zu Ende."
+          "mean": "Schalter zu. Alles, was die Stimmung ändert, soll irgendwann hier durch."
         },
         {
           "line": "function onColorChange(event) {",
-          "mean": "Läuft, sobald sich die Farbe ändert."
+          "mean": "Der Moment, in dem jemand die Farbe anfasst."
         },
         {
           "line": "applyMood(event.target.value, Number(brightnessInput.value));",
-          "mean": "Neue Farbe + aktuelle Helligkeit übernehmen."
+          "mean": "Neue Farbe, alte Helligkeit. Number macht aus dem Slider-Text eine Zahl."
         },
         {
           "line": "}",
-          "mean": "onColorChange zu Ende."
+          "mean": "Farb-Hörer zu."
         },
         {
           "line": "colorInput.addEventListener(\"input\", onColorChange);",
-          "mean": "Hört auf jede Bewegung im Farbfeld."
+          "mean": "input = bei jeder Bewegung, nicht erst beim Loslassen."
         },
         {
           "line": "applyMood(DEFAULT_COLOR, DEFAULT_BRIGHTNESS);",
-          "mean": "Beim Laden einmal die Startstimmung setzen."
+          "mean": "Beim Laden einmal den Schalter umlegen, sonst startet die Seite stumm."
         },
         {
           "line": "function onBrightnessChange(event) {",
@@ -4065,7 +4065,7 @@ window.SCHRITTE = [
     "nr": 9,
     "titel": "Zufall & Reset",
     "ziel": "Zwei Buttons setzen die Stimmung.",
-    "intro": "<p>Neu: Zufall aus einer Liste und Reset auf die Startwerte.</p>",
+    "intro": "<p><strong>Zufall braucht Grenzen.</strong> Eine kurze Liste erlaubter Farben — keine wilde Lotterie. Reset ist der Heimweg: dieselben zwei Startwerte, kein Rätsel.</p>",
     "checks": [
       "Zufällige Stimmung wechselt Farbe",
       "Zurücksetzen bringt Teal zurück"
@@ -4077,27 +4077,27 @@ window.SCHRITTE = [
       "html": [
         {
           "line": "<!DOCTYPE html>",
-          "mean": "Sagt dem Browser: das ist HTML5."
+          "mean": "Erste Zeile, immer. Heißt: das ist modernes HTML, nicht ein Altdokument."
         },
         {
           "line": "<html lang=\"de\">",
-          "mean": "Die Seite beginnt. lang=de = Inhalt auf Deutsch."
+          "mean": "Die Seite beginnt. lang=de hilft Screenreadern und der Rechtschreibung."
         },
         {
           "line": "<head>",
-          "mean": "Kopf: Infos für den Browser, nicht der sichtbare Text."
+          "mean": "Backstage: Titel, Zeichensatz, Dateien. Hier sieht niemand etwas."
         },
         {
           "line": "<meta charset=\"UTF-8\" />",
-          "mean": "Zeichensatz. Damit ä ö ü ß richtig sind."
+          "mean": "Damit ä, ö, ü und ß nicht als Kringel landen."
         },
         {
           "line": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
-          "mean": "Passt die Seite an die Handy-Breite an."
+          "mean": "Ein Viewport = die Seite nimmt die echte Handybreite, statt winzig zu zoomen."
         },
         {
           "line": "<title>Stimmungslicht — creative</title>",
-          "mean": "Titel im Browser-Tab."
+          "mean": "Was im Tab steht. Auch das ist Teil des ersten Eindrucks."
         },
         {
           "line": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />",
@@ -4125,15 +4125,15 @@ window.SCHRITTE = [
         },
         {
           "line": "<link rel=\"stylesheet\" href=\"styles.css\" />",
-          "mean": "Lädt deine CSS-Datei."
+          "mean": "Hol das Aussehen aus styles.css. Ohne diese Zeile bleibt CSS wirkungslos."
         },
         {
           "line": "</head>",
-          "mean": "Kopf zu Ende."
+          "mean": "Backstage zu. Ab hier kommt, was man sieht."
         },
         {
           "line": "<body>",
-          "mean": "Körper: alles, was du auf der Seite siehst."
+          "mean": "Die Bühne. Alles Sichtbare lebt hier."
         },
         {
           "line": "<div class=\"atmosphere\" aria-hidden=\"true\">",
@@ -4249,133 +4249,133 @@ window.SCHRITTE = [
         },
         {
           "line": "<script src=\"script.js\"></script>",
-          "mean": "Lädt deine JavaScript-Datei."
+          "mean": "Hol das Verhalten aus script.js. Steht am Ende, damit das HTML schon da ist."
         },
         {
           "line": "</body>",
-          "mean": "Körper zu Ende."
+          "mean": "Bühne zu."
         },
         {
           "line": "</html>",
-          "mean": "HTML-Datei zu Ende."
+          "mean": "Datei zu. Nichts mehr danach."
         }
       ],
       "css": [
         {
           "line": ":root {",
-          "mean": "Wurzel der Seite. Hier speicherst du Variablen für überall."
+          "mean": "Der Zettel der ganzen Seite. Was hier steht, gilt überall — ein Ort, nicht sieben Kopien."
         },
         {
           "line": "--farbe: #2a9d8f;",
-          "mean": "Variable --farbe: Teal. Später ändert JavaScript sie."
+          "mean": "Name --farbe, Wert Teal. Später tauscht JS nur diesen Namen, nicht jedes Element."
         },
         {
           "line": "--helligkeit: 70%;",
-          "mean": "Wie stark die Farbe leuchtet (Prozent)."
+          "mean": "Wie stark das Licht steht. Prozent, weil Farbe und Stärke zusammenwirken."
         },
         {
           "line": "--text: #f4f0e8;",
-          "mean": "Textfarbe: warmes Creme."
+          "mean": "Creme auf Dunkel. So bleibt Schrift lesbar, ohne grell zu werden."
         },
         {
           "line": "--ink: #12151a;",
-          "mean": "Hintergrund: fast schwarz."
+          "mean": "Die Nacht der Seite. Fast schwarz, aber nicht drucker-schwarz."
         },
         {
           "line": "}",
-          "mean": "Variablen-Block zu Ende."
+          "mean": "Zettel zu. Die Namen leben weiter, der Block ist nur die Definition."
         },
         {
           "line": "*,",
-          "mean": "* = jedes Element. Das Komma heißt: und außerdem…"
+          "mean": "Sternchen = wirklich jedes Element. Das Komma heißt: und außerdem …"
         },
         {
           "line": "*::before,",
-          "mean": "::before = unsichtbares Pseudo-Element davor (falls vorhanden)."
+          "mean": "Geisterstück vor dem Inhalt, falls CSS eines erzeugt. Auch das muss mitgerechnet werden."
         },
         {
           "line": "*::after {",
-          "mean": "::after = Pseudo-Element danach. { öffnet den Regel-Block."
+          "mean": "Geisterstück danach. { öffnet die gemeinsame Regel für alle drei."
         },
         {
           "line": "box-sizing: border-box;",
-          "mean": "Breite zählt Padding und Rahmen mit. Layout wird einfacher."
+          "mean": "Die Kiste wird von außen gemessen. Futter und Rahmen sind schon in der Breite — sonst rechnet der Browser gegen dich."
         },
         {
           "line": "}",
-          "mean": "Dieser Block ist zu Ende."
+          "mean": "Reset zu. Ab hier darfst du Breiten ernst nehmen."
         },
         {
           "line": "html,",
-          "mean": "Das html-Element, und…"
+          "mean": "Das Dokument selbst, und …"
         },
         {
           "line": "body {",
-          "mean": "das body-Element: beide bekommen dieselben Regeln."
+          "mean": "… die Bühne. Beide: kein Rand, volle Höhe. Sonst bleibt ein Grausaum vom Browser."
         },
         {
           "line": "margin: 0;",
-          "mean": "Keinen Standard-Rand um die Seite."
+          "mean": "Den Standard-Rand abschneiden. Wir bestimmen den Abstand, nicht der Browser."
         },
         {
           "line": "min-height: 100%;",
-          "mean": "Mindestens so hoch wie das Fenster."
+          "mean": "Mindestens so hoch wie das Fenster. Kein halbes Blatt."
         },
         {
           "line": "}",
-          "mean": "Block zu Ende."
+          "mean": "Grundfläche steht."
         },
         {
           "line": "body {",
-          "mean": "Noch einmal body — extra Regeln nur für den sichtbaren Bereich."
+          "mean": "Zweiter Anlauf nur für den body: Schrift, Textfarbe, Hintergrund."
         },
         {
           "line": "font-family: \"Outfit\", sans-serif;",
-          "mean": "Schrift Outfit, sonst irgendeine serifenlose."
+          "mean": "Outfit zuerst. Kommt sie nicht, irgendeine serifenlose — nie Times als Unfall."
         },
         {
           "line": "color: var(--text);",
-          "mean": "Textfarbe aus der Variable --text holen."
+          "mean": "Nicht die Creme-Farbe hart eintragen: den Namen vom Zettel holen."
         },
         {
           "line": "background: var(--ink);",
-          "mean": "Hintergrund aus der Variable --ink holen."
+          "mean": "Hintergrund vom selben Zettel. Ein Tausch in :root färbt beides um."
         },
         {
           "line": "}",
-          "mean": "Body-Block zu Ende."
+          "mean": "Basis steht. Die Seite hat jetzt Charakter, noch keine Komposition."
         },
         {
           "line": ".atmosphere {",
-          "mean": "Klasse .atmosphere: die Hintergrund-Schicht."
+          "mean": "Die hintere Wand des Raums. Klasse mit Punkt: ein Name, den HTML tragen muss."
         },
         {
           "line": "position: fixed;",
-          "mean": "Bleibt am Bildschirm kleben, scrollt nicht weg."
+          "mean": "Klebt am Fenster. Scrollt der Inhalt, das Licht bleibt."
         },
         {
           "line": "inset: 0;",
-          "mean": "Oben, rechts, unten, links = 0 → füllt alles."
+          "mean": "Oben, rechts, unten, links = 0. Kurzform für: füll alles."
         },
         {
           "line": "z-index: 0;",
-          "mean": "Ganz hinten. Inhalt kommt später mit höherem z-index."
+          "mean": "Hinten. Text bekommt später 1 und tritt davor — wie Kulisse und Schauspieler."
         },
         {
           "line": "pointer-events: none;",
-          "mean": "Klicks gehen durch, nicht auf diese Schicht."
+          "mean": "Diese Wand fängt keine Klicks. Finger gehen durch zum Inhalt."
         },
         {
           "line": "}",
-          "mean": "Atmosphere-Block zu Ende."
+          "mean": "Wand steht."
         },
         {
           "line": ".atmosphere__wash {",
-          "mean": "Die farbige Wäsche innerhalb der Schicht."
+          "mean": "Die Farbwäsche auf der Wand. BEM-Name: gehört zur Atmosphere."
         },
         {
           "line": "position: absolute;",
-          "mean": "Position relativ zur Atmosphere."
+          "mean": "Füllt die Wand, nicht das Fenster selbst."
         },
         {
           "line": "inset: 0;",
@@ -4383,31 +4383,31 @@ window.SCHRITTE = [
         },
         {
           "line": "background: radial-gradient(",
-          "mean": "Ein runder Farbverlauf beginnt."
+          "mean": "Kein Flächenton: ein Verlauf von einem Kern nach außen."
         },
         {
           "line": "ellipse 80% 70% at 50% 40%,",
-          "mean": "Form und Position des Verlaufs (Mitte, etwas oben)."
+          "mean": "Der Kern sitzt mittig, etwas über der Mitte — wie Licht von vorn."
         },
         {
           "line": "color-mix(in srgb, var(--farbe) var(--helligkeit), transparent),",
-          "mean": "Mischt --farbe mit Transparenz, Stärke = --helligkeit."
+          "mean": "Farbe vom Zettel, Stärke vom Zettel, Rest Luft. Genau deshalb wirken die Regler."
         },
         {
           "line": "rgb(8 10 14 / 0.9)",
-          "mean": "Nach außen wird es fast schwarz."
+          "mean": "Nach außen Nacht. Der Verlauf braucht ein Ende, sonst wirkt er billig."
         },
         {
           "line": ");",
-          "mean": "Verlauf zu Ende."
+          "mean": "Verlauf zu."
         },
         {
           "line": "transition: background 0.5s ease;",
-          "mean": "Farbwechsel dauert 0,5 Sekunden, weich."
+          "mean": "Ein halbe Sekunde weich. Licht springt nicht, es atmet."
         },
         {
           "line": "}",
-          "mean": "Wash-Block zu Ende."
+          "mean": "Wäsche zu. Ab jetzt ist --farbe sichtbar, nicht nur definiert."
         },
         {
           "line": ".brand {",
@@ -4853,67 +4853,67 @@ window.SCHRITTE = [
       "js": [
         {
           "line": "const DEFAULT_COLOR = \"#2a9d8f\";",
-          "mean": "Startfarbe Teal, als Konstante (ändert sich nicht)."
+          "mean": "Die Heimfarbe. const = dieser Wert bleibt, wir überschreiben ihn nicht."
         },
         {
           "line": "const DEFAULT_BRIGHTNESS = 70;",
-          "mean": "Start-Helligkeit 70."
+          "mean": "Die Heim-Helligkeit. Zwei Konstanten, ein Reset-Ziel."
         },
         {
           "line": "const root = document.documentElement;",
-          "mean": "Das <html>-Element. Dort setzen wir CSS-Variablen."
+          "mean": "Das <html>-Element. Genau dort leben die CSS-Zettel --farbe und --helligkeit."
         },
         {
           "line": "const colorInput = document.getElementById(\"color\");",
-          "mean": "Holt das Farbfeld mit id=color."
+          "mean": "Klingelschild color. Ohne exakt diese id ist das Feld unsichtbar für JS."
         },
         {
           "line": "const brightnessInput = document.getElementById(\"brightness\");",
-          "mean": "Holt den Slider mit id=brightness."
+          "mean": "Dasselbe für den Slider. Merke: HTML-id und dieser String müssen identisch sein."
         },
         {
           "line": "function applyMood(color, brightness) {",
-          "mean": "Funktion: Stimmung anwenden. Bekommt Farbe und Helligkeit."
+          "mean": "Ein Schalter für beides. Eine Funktion, zwei Werte — nicht sieben Copy-Pastes."
         },
         {
           "line": "root.style.setProperty(\"--farbe\", color);",
-          "mean": "Schreibt --farbe in CSS. Die Seite färbt sich."
+          "mean": "Schreib den Zettel um. CSS hört zu, der Glow folgt."
         },
         {
           "line": "root.style.setProperty(\"--helligkeit\", `${brightness}%`);",
-          "mean": "Schreibt --helligkeit, mit % am Ende."
+          "mean": "Helligkeit braucht das %. Template-String: Zahl rein, Prozent dran."
         },
         {
           "line": "colorInput.value = color;",
-          "mean": "Farbfeld auf denselben Wert stellen."
+          "mean": "Das Farbfeld soll zeigen, was wirklich gilt — sonst lügen Steuerung und Bild."
         },
         {
           "line": "brightnessInput.value = String(brightness);",
-          "mean": "Slider-Wert als Text setzen (Inputs wollen Strings)."
+          "mean": "Inputs wollen Text. String() macht aus 70 das \"70\"."
         },
         {
           "line": "}",
-          "mean": "applyMood zu Ende."
+          "mean": "Schalter zu. Alles, was die Stimmung ändert, soll irgendwann hier durch."
         },
         {
           "line": "function onColorChange(event) {",
-          "mean": "Läuft, sobald sich die Farbe ändert."
+          "mean": "Der Moment, in dem jemand die Farbe anfasst."
         },
         {
           "line": "applyMood(event.target.value, Number(brightnessInput.value));",
-          "mean": "Neue Farbe + aktuelle Helligkeit übernehmen."
+          "mean": "Neue Farbe, alte Helligkeit. Number macht aus dem Slider-Text eine Zahl."
         },
         {
           "line": "}",
-          "mean": "onColorChange zu Ende."
+          "mean": "Farb-Hörer zu."
         },
         {
           "line": "colorInput.addEventListener(\"input\", onColorChange);",
-          "mean": "Hört auf jede Bewegung im Farbfeld."
+          "mean": "input = bei jeder Bewegung, nicht erst beim Loslassen."
         },
         {
           "line": "applyMood(DEFAULT_COLOR, DEFAULT_BRIGHTNESS);",
-          "mean": "Beim Laden einmal die Startstimmung setzen."
+          "mean": "Beim Laden einmal den Schalter umlegen, sonst startet die Seite stumm."
         },
         {
           "line": "function onBrightnessChange(event) {",
@@ -5018,7 +5018,7 @@ window.SCHRITTE = [
     "nr": 10,
     "titel": "RGB-Anzeige",
     "ziel": "Unter den Controls stehen die aktuellen RGB-Zahlen.",
-    "intro": "<p>Neu: Hex-Farbe in RGB-Zahlen zerlegen und anzeigen.</p>",
+    "intro": "<p><strong>Menschen lesen RGB, Computer Hex.</strong> <code>#2a9d8f</code> wird zu drei Zahlen. Du musst die Bit-Verschiebung nicht auswendig können — merke: zerlegen, anzeigen, bei jeder Änderung neu.</p>",
     "checks": [
       "Start zeigt etwa RGB 42 · 157 · 143",
       "Bei Farbwechsel aktualisiert sich die Zeile"
@@ -5030,27 +5030,27 @@ window.SCHRITTE = [
       "html": [
         {
           "line": "<!DOCTYPE html>",
-          "mean": "Sagt dem Browser: das ist HTML5."
+          "mean": "Erste Zeile, immer. Heißt: das ist modernes HTML, nicht ein Altdokument."
         },
         {
           "line": "<html lang=\"de\">",
-          "mean": "Die Seite beginnt. lang=de = Inhalt auf Deutsch."
+          "mean": "Die Seite beginnt. lang=de hilft Screenreadern und der Rechtschreibung."
         },
         {
           "line": "<head>",
-          "mean": "Kopf: Infos für den Browser, nicht der sichtbare Text."
+          "mean": "Backstage: Titel, Zeichensatz, Dateien. Hier sieht niemand etwas."
         },
         {
           "line": "<meta charset=\"UTF-8\" />",
-          "mean": "Zeichensatz. Damit ä ö ü ß richtig sind."
+          "mean": "Damit ä, ö, ü und ß nicht als Kringel landen."
         },
         {
           "line": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
-          "mean": "Passt die Seite an die Handy-Breite an."
+          "mean": "Ein Viewport = die Seite nimmt die echte Handybreite, statt winzig zu zoomen."
         },
         {
           "line": "<title>Stimmungslicht — creative</title>",
-          "mean": "Titel im Browser-Tab."
+          "mean": "Was im Tab steht. Auch das ist Teil des ersten Eindrucks."
         },
         {
           "line": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />",
@@ -5078,15 +5078,15 @@ window.SCHRITTE = [
         },
         {
           "line": "<link rel=\"stylesheet\" href=\"styles.css\" />",
-          "mean": "Lädt deine CSS-Datei."
+          "mean": "Hol das Aussehen aus styles.css. Ohne diese Zeile bleibt CSS wirkungslos."
         },
         {
           "line": "</head>",
-          "mean": "Kopf zu Ende."
+          "mean": "Backstage zu. Ab hier kommt, was man sieht."
         },
         {
           "line": "<body>",
-          "mean": "Körper: alles, was du auf der Seite siehst."
+          "mean": "Die Bühne. Alles Sichtbare lebt hier."
         },
         {
           "line": "<div class=\"atmosphere\" aria-hidden=\"true\">",
@@ -5202,133 +5202,133 @@ window.SCHRITTE = [
         },
         {
           "line": "<script src=\"script.js\"></script>",
-          "mean": "Lädt deine JavaScript-Datei."
+          "mean": "Hol das Verhalten aus script.js. Steht am Ende, damit das HTML schon da ist."
         },
         {
           "line": "</body>",
-          "mean": "Körper zu Ende."
+          "mean": "Bühne zu."
         },
         {
           "line": "</html>",
-          "mean": "HTML-Datei zu Ende."
+          "mean": "Datei zu. Nichts mehr danach."
         }
       ],
       "css": [
         {
           "line": ":root {",
-          "mean": "Wurzel der Seite. Hier speicherst du Variablen für überall."
+          "mean": "Der Zettel der ganzen Seite. Was hier steht, gilt überall — ein Ort, nicht sieben Kopien."
         },
         {
           "line": "--farbe: #2a9d8f;",
-          "mean": "Variable --farbe: Teal. Später ändert JavaScript sie."
+          "mean": "Name --farbe, Wert Teal. Später tauscht JS nur diesen Namen, nicht jedes Element."
         },
         {
           "line": "--helligkeit: 70%;",
-          "mean": "Wie stark die Farbe leuchtet (Prozent)."
+          "mean": "Wie stark das Licht steht. Prozent, weil Farbe und Stärke zusammenwirken."
         },
         {
           "line": "--text: #f4f0e8;",
-          "mean": "Textfarbe: warmes Creme."
+          "mean": "Creme auf Dunkel. So bleibt Schrift lesbar, ohne grell zu werden."
         },
         {
           "line": "--ink: #12151a;",
-          "mean": "Hintergrund: fast schwarz."
+          "mean": "Die Nacht der Seite. Fast schwarz, aber nicht drucker-schwarz."
         },
         {
           "line": "}",
-          "mean": "Variablen-Block zu Ende."
+          "mean": "Zettel zu. Die Namen leben weiter, der Block ist nur die Definition."
         },
         {
           "line": "*,",
-          "mean": "* = jedes Element. Das Komma heißt: und außerdem…"
+          "mean": "Sternchen = wirklich jedes Element. Das Komma heißt: und außerdem …"
         },
         {
           "line": "*::before,",
-          "mean": "::before = unsichtbares Pseudo-Element davor (falls vorhanden)."
+          "mean": "Geisterstück vor dem Inhalt, falls CSS eines erzeugt. Auch das muss mitgerechnet werden."
         },
         {
           "line": "*::after {",
-          "mean": "::after = Pseudo-Element danach. { öffnet den Regel-Block."
+          "mean": "Geisterstück danach. { öffnet die gemeinsame Regel für alle drei."
         },
         {
           "line": "box-sizing: border-box;",
-          "mean": "Breite zählt Padding und Rahmen mit. Layout wird einfacher."
+          "mean": "Die Kiste wird von außen gemessen. Futter und Rahmen sind schon in der Breite — sonst rechnet der Browser gegen dich."
         },
         {
           "line": "}",
-          "mean": "Dieser Block ist zu Ende."
+          "mean": "Reset zu. Ab hier darfst du Breiten ernst nehmen."
         },
         {
           "line": "html,",
-          "mean": "Das html-Element, und…"
+          "mean": "Das Dokument selbst, und …"
         },
         {
           "line": "body {",
-          "mean": "das body-Element: beide bekommen dieselben Regeln."
+          "mean": "… die Bühne. Beide: kein Rand, volle Höhe. Sonst bleibt ein Grausaum vom Browser."
         },
         {
           "line": "margin: 0;",
-          "mean": "Keinen Standard-Rand um die Seite."
+          "mean": "Den Standard-Rand abschneiden. Wir bestimmen den Abstand, nicht der Browser."
         },
         {
           "line": "min-height: 100%;",
-          "mean": "Mindestens so hoch wie das Fenster."
+          "mean": "Mindestens so hoch wie das Fenster. Kein halbes Blatt."
         },
         {
           "line": "}",
-          "mean": "Block zu Ende."
+          "mean": "Grundfläche steht."
         },
         {
           "line": "body {",
-          "mean": "Noch einmal body — extra Regeln nur für den sichtbaren Bereich."
+          "mean": "Zweiter Anlauf nur für den body: Schrift, Textfarbe, Hintergrund."
         },
         {
           "line": "font-family: \"Outfit\", sans-serif;",
-          "mean": "Schrift Outfit, sonst irgendeine serifenlose."
+          "mean": "Outfit zuerst. Kommt sie nicht, irgendeine serifenlose — nie Times als Unfall."
         },
         {
           "line": "color: var(--text);",
-          "mean": "Textfarbe aus der Variable --text holen."
+          "mean": "Nicht die Creme-Farbe hart eintragen: den Namen vom Zettel holen."
         },
         {
           "line": "background: var(--ink);",
-          "mean": "Hintergrund aus der Variable --ink holen."
+          "mean": "Hintergrund vom selben Zettel. Ein Tausch in :root färbt beides um."
         },
         {
           "line": "}",
-          "mean": "Body-Block zu Ende."
+          "mean": "Basis steht. Die Seite hat jetzt Charakter, noch keine Komposition."
         },
         {
           "line": ".atmosphere {",
-          "mean": "Klasse .atmosphere: die Hintergrund-Schicht."
+          "mean": "Die hintere Wand des Raums. Klasse mit Punkt: ein Name, den HTML tragen muss."
         },
         {
           "line": "position: fixed;",
-          "mean": "Bleibt am Bildschirm kleben, scrollt nicht weg."
+          "mean": "Klebt am Fenster. Scrollt der Inhalt, das Licht bleibt."
         },
         {
           "line": "inset: 0;",
-          "mean": "Oben, rechts, unten, links = 0 → füllt alles."
+          "mean": "Oben, rechts, unten, links = 0. Kurzform für: füll alles."
         },
         {
           "line": "z-index: 0;",
-          "mean": "Ganz hinten. Inhalt kommt später mit höherem z-index."
+          "mean": "Hinten. Text bekommt später 1 und tritt davor — wie Kulisse und Schauspieler."
         },
         {
           "line": "pointer-events: none;",
-          "mean": "Klicks gehen durch, nicht auf diese Schicht."
+          "mean": "Diese Wand fängt keine Klicks. Finger gehen durch zum Inhalt."
         },
         {
           "line": "}",
-          "mean": "Atmosphere-Block zu Ende."
+          "mean": "Wand steht."
         },
         {
           "line": ".atmosphere__wash {",
-          "mean": "Die farbige Wäsche innerhalb der Schicht."
+          "mean": "Die Farbwäsche auf der Wand. BEM-Name: gehört zur Atmosphere."
         },
         {
           "line": "position: absolute;",
-          "mean": "Position relativ zur Atmosphere."
+          "mean": "Füllt die Wand, nicht das Fenster selbst."
         },
         {
           "line": "inset: 0;",
@@ -5336,31 +5336,31 @@ window.SCHRITTE = [
         },
         {
           "line": "background: radial-gradient(",
-          "mean": "Ein runder Farbverlauf beginnt."
+          "mean": "Kein Flächenton: ein Verlauf von einem Kern nach außen."
         },
         {
           "line": "ellipse 80% 70% at 50% 40%,",
-          "mean": "Form und Position des Verlaufs (Mitte, etwas oben)."
+          "mean": "Der Kern sitzt mittig, etwas über der Mitte — wie Licht von vorn."
         },
         {
           "line": "color-mix(in srgb, var(--farbe) var(--helligkeit), transparent),",
-          "mean": "Mischt --farbe mit Transparenz, Stärke = --helligkeit."
+          "mean": "Farbe vom Zettel, Stärke vom Zettel, Rest Luft. Genau deshalb wirken die Regler."
         },
         {
           "line": "rgb(8 10 14 / 0.9)",
-          "mean": "Nach außen wird es fast schwarz."
+          "mean": "Nach außen Nacht. Der Verlauf braucht ein Ende, sonst wirkt er billig."
         },
         {
           "line": ");",
-          "mean": "Verlauf zu Ende."
+          "mean": "Verlauf zu."
         },
         {
           "line": "transition: background 0.5s ease;",
-          "mean": "Farbwechsel dauert 0,5 Sekunden, weich."
+          "mean": "Ein halbe Sekunde weich. Licht springt nicht, es atmet."
         },
         {
           "line": "}",
-          "mean": "Wash-Block zu Ende."
+          "mean": "Wäsche zu. Ab jetzt ist --farbe sichtbar, nicht nur definiert."
         },
         {
           "line": ".brand {",
@@ -5806,67 +5806,67 @@ window.SCHRITTE = [
       "js": [
         {
           "line": "const DEFAULT_COLOR = \"#2a9d8f\";",
-          "mean": "Startfarbe Teal, als Konstante (ändert sich nicht)."
+          "mean": "Die Heimfarbe. const = dieser Wert bleibt, wir überschreiben ihn nicht."
         },
         {
           "line": "const DEFAULT_BRIGHTNESS = 70;",
-          "mean": "Start-Helligkeit 70."
+          "mean": "Die Heim-Helligkeit. Zwei Konstanten, ein Reset-Ziel."
         },
         {
           "line": "const root = document.documentElement;",
-          "mean": "Das <html>-Element. Dort setzen wir CSS-Variablen."
+          "mean": "Das <html>-Element. Genau dort leben die CSS-Zettel --farbe und --helligkeit."
         },
         {
           "line": "const colorInput = document.getElementById(\"color\");",
-          "mean": "Holt das Farbfeld mit id=color."
+          "mean": "Klingelschild color. Ohne exakt diese id ist das Feld unsichtbar für JS."
         },
         {
           "line": "const brightnessInput = document.getElementById(\"brightness\");",
-          "mean": "Holt den Slider mit id=brightness."
+          "mean": "Dasselbe für den Slider. Merke: HTML-id und dieser String müssen identisch sein."
         },
         {
           "line": "function applyMood(color, brightness) {",
-          "mean": "Funktion: Stimmung anwenden. Bekommt Farbe und Helligkeit."
+          "mean": "Ein Schalter für beides. Eine Funktion, zwei Werte — nicht sieben Copy-Pastes."
         },
         {
           "line": "root.style.setProperty(\"--farbe\", color);",
-          "mean": "Schreibt --farbe in CSS. Die Seite färbt sich."
+          "mean": "Schreib den Zettel um. CSS hört zu, der Glow folgt."
         },
         {
           "line": "root.style.setProperty(\"--helligkeit\", `${brightness}%`);",
-          "mean": "Schreibt --helligkeit, mit % am Ende."
+          "mean": "Helligkeit braucht das %. Template-String: Zahl rein, Prozent dran."
         },
         {
           "line": "colorInput.value = color;",
-          "mean": "Farbfeld auf denselben Wert stellen."
+          "mean": "Das Farbfeld soll zeigen, was wirklich gilt — sonst lügen Steuerung und Bild."
         },
         {
           "line": "brightnessInput.value = String(brightness);",
-          "mean": "Slider-Wert als Text setzen (Inputs wollen Strings)."
+          "mean": "Inputs wollen Text. String() macht aus 70 das \"70\"."
         },
         {
           "line": "}",
-          "mean": "applyMood zu Ende."
+          "mean": "Schalter zu. Alles, was die Stimmung ändert, soll irgendwann hier durch."
         },
         {
           "line": "function onColorChange(event) {",
-          "mean": "Läuft, sobald sich die Farbe ändert."
+          "mean": "Der Moment, in dem jemand die Farbe anfasst."
         },
         {
           "line": "applyMood(event.target.value, Number(brightnessInput.value));",
-          "mean": "Neue Farbe + aktuelle Helligkeit übernehmen."
+          "mean": "Neue Farbe, alte Helligkeit. Number macht aus dem Slider-Text eine Zahl."
         },
         {
           "line": "}",
-          "mean": "onColorChange zu Ende."
+          "mean": "Farb-Hörer zu."
         },
         {
           "line": "colorInput.addEventListener(\"input\", onColorChange);",
-          "mean": "Hört auf jede Bewegung im Farbfeld."
+          "mean": "input = bei jeder Bewegung, nicht erst beim Loslassen."
         },
         {
           "line": "applyMood(DEFAULT_COLOR, DEFAULT_BRIGHTNESS);",
-          "mean": "Beim Laden einmal die Startstimmung setzen."
+          "mean": "Beim Laden einmal den Schalter umlegen, sonst startet die Seite stumm."
         },
         {
           "line": "function onBrightnessChange(event) {",
@@ -6059,7 +6059,7 @@ window.SCHRITTE = [
     "nr": 11,
     "titel": "Feinschliff & fertig",
     "ziel": "Texte kommen sanft rein. Projekt 01 ist komplett.",
-    "intro": "<p>Neu: Texte fahren sanft rein. Danach ist Projekt 01 komplett.</p>",
+    "intro": "<p><strong>Zum Schluss: Ankunft, kein Feuerwerk.</strong> Texte kommen von unten, kurz, dann stehen sie. Und wenn jemand weniger Bewegung will, schaltet <code>prefers-reduced-motion</code> den Effekt ab. Das ist Sorgfalt.</p>",
     "checks": [
       "Texte erscheinen leicht von unten",
       "Farbe, Helligkeit, Zufall, Reset, RGB funktionieren"
@@ -6071,27 +6071,27 @@ window.SCHRITTE = [
       "html": [
         {
           "line": "<!DOCTYPE html>",
-          "mean": "Sagt dem Browser: das ist HTML5."
+          "mean": "Erste Zeile, immer. Heißt: das ist modernes HTML, nicht ein Altdokument."
         },
         {
           "line": "<html lang=\"de\">",
-          "mean": "Die Seite beginnt. lang=de = Inhalt auf Deutsch."
+          "mean": "Die Seite beginnt. lang=de hilft Screenreadern und der Rechtschreibung."
         },
         {
           "line": "<head>",
-          "mean": "Kopf: Infos für den Browser, nicht der sichtbare Text."
+          "mean": "Backstage: Titel, Zeichensatz, Dateien. Hier sieht niemand etwas."
         },
         {
           "line": "<meta charset=\"UTF-8\" />",
-          "mean": "Zeichensatz. Damit ä ö ü ß richtig sind."
+          "mean": "Damit ä, ö, ü und ß nicht als Kringel landen."
         },
         {
           "line": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
-          "mean": "Passt die Seite an die Handy-Breite an."
+          "mean": "Ein Viewport = die Seite nimmt die echte Handybreite, statt winzig zu zoomen."
         },
         {
           "line": "<title>Stimmungslicht — creative</title>",
-          "mean": "Titel im Browser-Tab."
+          "mean": "Was im Tab steht. Auch das ist Teil des ersten Eindrucks."
         },
         {
           "line": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />",
@@ -6119,15 +6119,15 @@ window.SCHRITTE = [
         },
         {
           "line": "<link rel=\"stylesheet\" href=\"styles.css\" />",
-          "mean": "Lädt deine CSS-Datei."
+          "mean": "Hol das Aussehen aus styles.css. Ohne diese Zeile bleibt CSS wirkungslos."
         },
         {
           "line": "</head>",
-          "mean": "Kopf zu Ende."
+          "mean": "Backstage zu. Ab hier kommt, was man sieht."
         },
         {
           "line": "<body>",
-          "mean": "Körper: alles, was du auf der Seite siehst."
+          "mean": "Die Bühne. Alles Sichtbare lebt hier."
         },
         {
           "line": "<div class=\"atmosphere\" aria-hidden=\"true\">",
@@ -6243,133 +6243,133 @@ window.SCHRITTE = [
         },
         {
           "line": "<script src=\"script.js\"></script>",
-          "mean": "Lädt deine JavaScript-Datei."
+          "mean": "Hol das Verhalten aus script.js. Steht am Ende, damit das HTML schon da ist."
         },
         {
           "line": "</body>",
-          "mean": "Körper zu Ende."
+          "mean": "Bühne zu."
         },
         {
           "line": "</html>",
-          "mean": "HTML-Datei zu Ende."
+          "mean": "Datei zu. Nichts mehr danach."
         }
       ],
       "css": [
         {
           "line": ":root {",
-          "mean": "Wurzel der Seite. Hier speicherst du Variablen für überall."
+          "mean": "Der Zettel der ganzen Seite. Was hier steht, gilt überall — ein Ort, nicht sieben Kopien."
         },
         {
           "line": "--farbe: #2a9d8f;",
-          "mean": "Variable --farbe: Teal. Später ändert JavaScript sie."
+          "mean": "Name --farbe, Wert Teal. Später tauscht JS nur diesen Namen, nicht jedes Element."
         },
         {
           "line": "--helligkeit: 70%;",
-          "mean": "Wie stark die Farbe leuchtet (Prozent)."
+          "mean": "Wie stark das Licht steht. Prozent, weil Farbe und Stärke zusammenwirken."
         },
         {
           "line": "--text: #f4f0e8;",
-          "mean": "Textfarbe: warmes Creme."
+          "mean": "Creme auf Dunkel. So bleibt Schrift lesbar, ohne grell zu werden."
         },
         {
           "line": "--ink: #12151a;",
-          "mean": "Hintergrund: fast schwarz."
+          "mean": "Die Nacht der Seite. Fast schwarz, aber nicht drucker-schwarz."
         },
         {
           "line": "}",
-          "mean": "Variablen-Block zu Ende."
+          "mean": "Zettel zu. Die Namen leben weiter, der Block ist nur die Definition."
         },
         {
           "line": "*,",
-          "mean": "* = jedes Element. Das Komma heißt: und außerdem…"
+          "mean": "Sternchen = wirklich jedes Element. Das Komma heißt: und außerdem …"
         },
         {
           "line": "*::before,",
-          "mean": "::before = unsichtbares Pseudo-Element davor (falls vorhanden)."
+          "mean": "Geisterstück vor dem Inhalt, falls CSS eines erzeugt. Auch das muss mitgerechnet werden."
         },
         {
           "line": "*::after {",
-          "mean": "::after = Pseudo-Element danach. { öffnet den Regel-Block."
+          "mean": "Geisterstück danach. { öffnet die gemeinsame Regel für alle drei."
         },
         {
           "line": "box-sizing: border-box;",
-          "mean": "Breite zählt Padding und Rahmen mit. Layout wird einfacher."
+          "mean": "Die Kiste wird von außen gemessen. Futter und Rahmen sind schon in der Breite — sonst rechnet der Browser gegen dich."
         },
         {
           "line": "}",
-          "mean": "Dieser Block ist zu Ende."
+          "mean": "Reset zu. Ab hier darfst du Breiten ernst nehmen."
         },
         {
           "line": "html,",
-          "mean": "Das html-Element, und…"
+          "mean": "Das Dokument selbst, und …"
         },
         {
           "line": "body {",
-          "mean": "das body-Element: beide bekommen dieselben Regeln."
+          "mean": "… die Bühne. Beide: kein Rand, volle Höhe. Sonst bleibt ein Grausaum vom Browser."
         },
         {
           "line": "margin: 0;",
-          "mean": "Keinen Standard-Rand um die Seite."
+          "mean": "Den Standard-Rand abschneiden. Wir bestimmen den Abstand, nicht der Browser."
         },
         {
           "line": "min-height: 100%;",
-          "mean": "Mindestens so hoch wie das Fenster."
+          "mean": "Mindestens so hoch wie das Fenster. Kein halbes Blatt."
         },
         {
           "line": "}",
-          "mean": "Block zu Ende."
+          "mean": "Grundfläche steht."
         },
         {
           "line": "body {",
-          "mean": "Noch einmal body — extra Regeln nur für den sichtbaren Bereich."
+          "mean": "Zweiter Anlauf nur für den body: Schrift, Textfarbe, Hintergrund."
         },
         {
           "line": "font-family: \"Outfit\", sans-serif;",
-          "mean": "Schrift Outfit, sonst irgendeine serifenlose."
+          "mean": "Outfit zuerst. Kommt sie nicht, irgendeine serifenlose — nie Times als Unfall."
         },
         {
           "line": "color: var(--text);",
-          "mean": "Textfarbe aus der Variable --text holen."
+          "mean": "Nicht die Creme-Farbe hart eintragen: den Namen vom Zettel holen."
         },
         {
           "line": "background: var(--ink);",
-          "mean": "Hintergrund aus der Variable --ink holen."
+          "mean": "Hintergrund vom selben Zettel. Ein Tausch in :root färbt beides um."
         },
         {
           "line": "}",
-          "mean": "Body-Block zu Ende."
+          "mean": "Basis steht. Die Seite hat jetzt Charakter, noch keine Komposition."
         },
         {
           "line": ".atmosphere {",
-          "mean": "Klasse .atmosphere: die Hintergrund-Schicht."
+          "mean": "Die hintere Wand des Raums. Klasse mit Punkt: ein Name, den HTML tragen muss."
         },
         {
           "line": "position: fixed;",
-          "mean": "Bleibt am Bildschirm kleben, scrollt nicht weg."
+          "mean": "Klebt am Fenster. Scrollt der Inhalt, das Licht bleibt."
         },
         {
           "line": "inset: 0;",
-          "mean": "Oben, rechts, unten, links = 0 → füllt alles."
+          "mean": "Oben, rechts, unten, links = 0. Kurzform für: füll alles."
         },
         {
           "line": "z-index: 0;",
-          "mean": "Ganz hinten. Inhalt kommt später mit höherem z-index."
+          "mean": "Hinten. Text bekommt später 1 und tritt davor — wie Kulisse und Schauspieler."
         },
         {
           "line": "pointer-events: none;",
-          "mean": "Klicks gehen durch, nicht auf diese Schicht."
+          "mean": "Diese Wand fängt keine Klicks. Finger gehen durch zum Inhalt."
         },
         {
           "line": "}",
-          "mean": "Atmosphere-Block zu Ende."
+          "mean": "Wand steht."
         },
         {
           "line": ".atmosphere__wash {",
-          "mean": "Die farbige Wäsche innerhalb der Schicht."
+          "mean": "Die Farbwäsche auf der Wand. BEM-Name: gehört zur Atmosphere."
         },
         {
           "line": "position: absolute;",
-          "mean": "Position relativ zur Atmosphere."
+          "mean": "Füllt die Wand, nicht das Fenster selbst."
         },
         {
           "line": "inset: 0;",
@@ -6377,31 +6377,31 @@ window.SCHRITTE = [
         },
         {
           "line": "background: radial-gradient(",
-          "mean": "Ein runder Farbverlauf beginnt."
+          "mean": "Kein Flächenton: ein Verlauf von einem Kern nach außen."
         },
         {
           "line": "ellipse 80% 70% at 50% 40%,",
-          "mean": "Form und Position des Verlaufs (Mitte, etwas oben)."
+          "mean": "Der Kern sitzt mittig, etwas über der Mitte — wie Licht von vorn."
         },
         {
           "line": "color-mix(in srgb, var(--farbe) var(--helligkeit), transparent),",
-          "mean": "Mischt --farbe mit Transparenz, Stärke = --helligkeit."
+          "mean": "Farbe vom Zettel, Stärke vom Zettel, Rest Luft. Genau deshalb wirken die Regler."
         },
         {
           "line": "rgb(8 10 14 / 0.9)",
-          "mean": "Nach außen wird es fast schwarz."
+          "mean": "Nach außen Nacht. Der Verlauf braucht ein Ende, sonst wirkt er billig."
         },
         {
           "line": ");",
-          "mean": "Verlauf zu Ende."
+          "mean": "Verlauf zu."
         },
         {
           "line": "transition: background 0.5s ease;",
-          "mean": "Farbwechsel dauert 0,5 Sekunden, weich."
+          "mean": "Ein halbe Sekunde weich. Licht springt nicht, es atmet."
         },
         {
           "line": "}",
-          "mean": "Wash-Block zu Ende."
+          "mean": "Wäsche zu. Ab jetzt ist --farbe sichtbar, nicht nur definiert."
         },
         {
           "line": ".brand {",
@@ -6947,67 +6947,67 @@ window.SCHRITTE = [
       "js": [
         {
           "line": "const DEFAULT_COLOR = \"#2a9d8f\";",
-          "mean": "Startfarbe Teal, als Konstante (ändert sich nicht)."
+          "mean": "Die Heimfarbe. const = dieser Wert bleibt, wir überschreiben ihn nicht."
         },
         {
           "line": "const DEFAULT_BRIGHTNESS = 70;",
-          "mean": "Start-Helligkeit 70."
+          "mean": "Die Heim-Helligkeit. Zwei Konstanten, ein Reset-Ziel."
         },
         {
           "line": "const root = document.documentElement;",
-          "mean": "Das <html>-Element. Dort setzen wir CSS-Variablen."
+          "mean": "Das <html>-Element. Genau dort leben die CSS-Zettel --farbe und --helligkeit."
         },
         {
           "line": "const colorInput = document.getElementById(\"color\");",
-          "mean": "Holt das Farbfeld mit id=color."
+          "mean": "Klingelschild color. Ohne exakt diese id ist das Feld unsichtbar für JS."
         },
         {
           "line": "const brightnessInput = document.getElementById(\"brightness\");",
-          "mean": "Holt den Slider mit id=brightness."
+          "mean": "Dasselbe für den Slider. Merke: HTML-id und dieser String müssen identisch sein."
         },
         {
           "line": "function applyMood(color, brightness) {",
-          "mean": "Funktion: Stimmung anwenden. Bekommt Farbe und Helligkeit."
+          "mean": "Ein Schalter für beides. Eine Funktion, zwei Werte — nicht sieben Copy-Pastes."
         },
         {
           "line": "root.style.setProperty(\"--farbe\", color);",
-          "mean": "Schreibt --farbe in CSS. Die Seite färbt sich."
+          "mean": "Schreib den Zettel um. CSS hört zu, der Glow folgt."
         },
         {
           "line": "root.style.setProperty(\"--helligkeit\", `${brightness}%`);",
-          "mean": "Schreibt --helligkeit, mit % am Ende."
+          "mean": "Helligkeit braucht das %. Template-String: Zahl rein, Prozent dran."
         },
         {
           "line": "colorInput.value = color;",
-          "mean": "Farbfeld auf denselben Wert stellen."
+          "mean": "Das Farbfeld soll zeigen, was wirklich gilt — sonst lügen Steuerung und Bild."
         },
         {
           "line": "brightnessInput.value = String(brightness);",
-          "mean": "Slider-Wert als Text setzen (Inputs wollen Strings)."
+          "mean": "Inputs wollen Text. String() macht aus 70 das \"70\"."
         },
         {
           "line": "}",
-          "mean": "applyMood zu Ende."
+          "mean": "Schalter zu. Alles, was die Stimmung ändert, soll irgendwann hier durch."
         },
         {
           "line": "function onColorChange(event) {",
-          "mean": "Läuft, sobald sich die Farbe ändert."
+          "mean": "Der Moment, in dem jemand die Farbe anfasst."
         },
         {
           "line": "applyMood(event.target.value, Number(brightnessInput.value));",
-          "mean": "Neue Farbe + aktuelle Helligkeit übernehmen."
+          "mean": "Neue Farbe, alte Helligkeit. Number macht aus dem Slider-Text eine Zahl."
         },
         {
           "line": "}",
-          "mean": "onColorChange zu Ende."
+          "mean": "Farb-Hörer zu."
         },
         {
           "line": "colorInput.addEventListener(\"input\", onColorChange);",
-          "mean": "Hört auf jede Bewegung im Farbfeld."
+          "mean": "input = bei jeder Bewegung, nicht erst beim Loslassen."
         },
         {
           "line": "applyMood(DEFAULT_COLOR, DEFAULT_BRIGHTNESS);",
-          "mean": "Beim Laden einmal die Startstimmung setzen."
+          "mean": "Beim Laden einmal den Schalter umlegen, sonst startet die Seite stumm."
         },
         {
           "line": "function onBrightnessChange(event) {",
