@@ -2,7 +2,23 @@
 
 Du baust die Projekte **selbst**. Ich gebe die Anleitung und helfe, wenn du steckenbleibst.
 
-## So funktioniert’s
+## Auf dem Handy (empfohlen zum Start)
+
+Öffne die Lern-App im Handy-Browser (Safari oder Chrome) — nicht in der Cursor-App:
+
+**[Stimmungslicht auf dem Handy öffnen](https://raw.githack.com/Bvault1420/creative/cursor/lernpfad-erstes-projekt-db30/lernen/index.html)**
+
+So geht’s dort:
+
+1. **Anleitung** lesen
+2. **Code für diesen Schritt übernehmen** tippen
+3. **Vorschau** prüfen
+4. Im Tab **Code** darfst du alles ändern
+5. Hakt etwas: zurück in den Chat, Schrittnummer + was du siehst
+
+Fortschritt bleibt auf dem Handy gespeichert (localStorage).
+
+## Am Computer
 
 1. Anleitung öffnen und **Schritt für Schritt** folgen
 2. Code **selbst tippen** (nicht kopieren und fertig sein)

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#12151a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <title>Stimmungslicht — Lernen auf dem Handy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="lernen.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="top__row">
+        <p class="top__brand">creative</p>
+        <button type="button" class="step-chip" id="open-steps" aria-haspopup="dialog">
+          <span id="step-chip-label">Schritt 1 / 11</span>
+        </button>
+      </div>
+      <h1 class="top__title" id="step-title">HTML-Grundgerüst</h1>
+    </header>
+
+    <section class="panel" id="panel-guide" data-panel="guide">
+      <p class="ziel" id="step-goal"></p>
+      <article class="prose" id="step-body"></article>
+      <ul class="checks" id="step-checks"></ul>
+      <div class="guide-actions">
+        <button type="button" class="btn btn--fill" id="apply-step">
+          Code für diesen Schritt übernehmen
+        </button>
+        <p class="hint">
+          Auf dem Handy: übernehmen, lesen, Vorschau prüfen. Du darfst den Code
+          danach ändern — abtippen musst du nicht.
+        </p>
+        <div class="step-nav">
+          <button type="button" class="btn btn--ghost" id="prev-step">Zurück</button>
+          <button type="button" class="btn btn--ghost" id="next-step">Weiter</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel panel--code hidden" id="panel-code" data-panel="code">
+      <div class="file-tabs" role="tablist" aria-label="Dateien">
+        <button type="button" class="file-tab is-active" data-file="html">HTML</button>
+        <button type="button" class="file-tab" data-file="css">CSS</button>
+        <button type="button" class="file-tab" data-file="js">JS</button>
+      </div>
+      <label class="sr-only" for="editor">Code-Editor</label>
+      <textarea
+        id="editor"
+        class="editor"
+        spellcheck="false"
+        autocapitalize="off"
+        autocomplete="off"
+        autocorrect="off"
+        enterkeyhint="enter"
+      ></textarea>
+    </section>
+
+    <section class="panel panel--preview hidden" id="panel-preview" data-panel="preview">
+      <iframe
+        id="preview"
+        title="Live-Vorschau deines Projekts"
+        sandbox="allow-scripts"
+      ></iframe>
+      <p class="preview-empty hidden" id="preview-empty">
+        Noch kein Code. Geh zu Anleitung und tippe
+        <strong>Code übernehmen</strong>.
+      </p>
+    </section>
+
+    <nav class="dock" aria-label="Bereiche">
+      <button type="button" class="dock__btn is-active" data-panel="guide">
+        Anleitung
+      </button>
+      <button type="button" class="dock__btn" data-panel="code">Code</button>
+      <button type="button" class="dock__btn" data-panel="preview">Vorschau</button>
+    </nav>
+
+    <dialog class="sheet" id="step-sheet">
+      <form method="dialog" class="sheet__head">
+        <strong>Schritte</strong>
+        <button type="submit" class="btn btn--ghost btn--small">Schließen</button>
+      </form>
+      <ol class="sheet__list" id="step-list"></ol>
+      <button type="button" class="btn btn--ghost btn--small sheet__reset" id="reset-progress">
+        Fortschritt löschen
+      </button>
+    </dialog>
+
+    <p class="toast hidden" id="toast" role="status"></p>
+
+    <script src="schritte.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

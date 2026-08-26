@@ -2,7 +2,19 @@
 
 Du baust ein interaktives Licht: Farbe wählen, Helligkeit drehen, Raum ändert sich.
 
-**Regel:** Tippe den Code selbst. Nach jedem Schritt im Browser prüfen.  
+## Auf dem Handy
+
+Nicht diese Markdown-Datei in Cursor öffnen — das landet wieder im Chat.
+
+Stattdessen die **Lern-App im Handy-Browser** öffnen:
+
+**[Stimmungslicht-App öffnen](https://raw.githack.com/Bvault1420/creative/cursor/lernpfad-erstes-projekt-db30/lernen/index.html)**
+
+Dort: Anleitung lesen → Code übernehmen → Vorschau. Bei Problemen zurück in den Chat.
+
+---
+
+**Am Computer:** Tippe den Code selbst. Nach jedem Schritt im Browser prüfen.  
 **Arbeitsordner:** `projekte/01-stimmungslicht/`  
 **Lösung (später):** `loesungen/01-stimmungslicht/` — erst anschauen, wenn du fertig bist oder steckenbleibst.
 
