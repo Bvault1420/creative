@@ -1,33 +1,26 @@
-# Projekt 01 — Stimmungslicht
+# Dein Arbeitsordner — Projekt 01
 
-Ein interaktives Licht: Du wählst eine Farbe und eine Intensität, und der Raum verändert sich.
+Hier baust du das Stimmungslicht **selbst**.
 
-## Lernziele
+## Anleitung
 
-- HTML: Seite strukturieren (`header`, `main`, `input`, `button`)
-- CSS: Variablen (`--farbe`), Übergänge, Layout ohne Karten-Chaos
-- JavaScript: Events (`input`, `click`), DOM lesen und schreiben
+Öffne und folge: [`../../anleitungen/01-stimmungslicht.md`](../../anleitungen/01-stimmungslicht.md)
 
-## Dateien
+## Dateien, die du anlegen wirst
 
-| Datei | Rolle |
-|-------|--------|
-| `index.html` | Struktur der Seite |
-| `styles.css` | Aussehen und Animation |
-| `script.js` | Interaktion (Farbe, Helligkeit, Zufall) |
-| `assets/mood-bg.png` | Hintergrundbild |
+- `index.html`
+- `styles.css`
+- `script.js`
 
-## Aufgabe zum Üben
-
-1. Öffne `script.js` und ändere die **Zufalls-Palette** (Array `PALETTE`).
-2. Füge einen Button hinzu, der die Farbe langsam **pulsieren** lässt.
-3. Schreibe unten in der Seite, welche RGB-Werte gerade aktiv sind.
-
-## Starten
+## Starten (sobald `index.html` existiert)
 
 ```bash
 cd projekte/01-stimmungslicht
 python3 -m http.server 5173
 ```
 
-Dann im Browser: http://localhost:5173
+Browser: http://localhost:5173
+
+## Hilfe
+
+Wenn etwas nicht klappt: schreib im Chat, **was** du gerade gemacht hast, **was** du siehst (Screenshot oder Fehlermeldung), und **welche Datei** betroffen ist.

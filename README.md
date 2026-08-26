@@ -1,39 +1,31 @@
-# creative
+# creative — Lern-Repo (Selbstbau)
 
-Lern-Repo für kleine Projekte — Schritt für Schritt Skills und Wissen aufbauen.
+Du baust die Projekte **selbst**. Ich gebe die Anleitung und helfe, wenn du steckenbleibst.
 
-## Idee
+## So funktioniert’s
 
-Hier entstehen **kurze, greifbare Projekte**. Jedes Projekt hat ein Ziel, erklärten Code und etwas, das du im Browser sehen und anfassen kannst.
+1. Anleitung öffnen und **Schritt für Schritt** folgen
+2. Code **selbst tippen** (nicht kopieren und fertig sein)
+3. Nach jedem Schritt im Browser prüfen
+4. Bei Problemen: Fehlermeldung + Datei/Zeile schicken → Hilfe holen
+5. Fertig? Optional mit der Lösung vergleichen
 
-## So lernen wir hier
+## Wichtig
 
-1. Ein kleines Projekt starten (HTML, CSS, JavaScript zuerst)
-2. Code lesen, ändern, kaputt machen, reparieren
-3. Kurze Notizen: Was war neu? Was war schwierig?
-4. Nächstes Projekt — etwas anspruchsvoller
+| Ordner | Bedeutung |
+|--------|-----------|
+| `anleitungen/` | Deine Schritt-für-Schritt-Anleitungen |
+| `projekte/` | Hier baust **du** |
+| `loesungen/` | Fertige Referenz — **erst anschauen, wenn du willst** |
 
-## Projekte
+## Aktuelles Projekt
 
-| # | Name | Was du lernst | Status |
-|---|------|---------------|--------|
-| 01 | [Stimmungslicht](projekte/01-stimmungslicht/) | HTML-Struktur, CSS-Variablen, Events in JS | bereit |
+→ [Anleitung 01 — Stimmungslicht](anleitungen/01-stimmungslicht.md)  
+→ Arbeitsordner: `projekte/01-stimmungslicht/`
 
-## Nächste mögliche Projekte
+## Später möglich
 
-- **02** — Zeichenfläche (Canvas + Maus)
-- **03** — Mini-Galerie (Bilder + Filter)
-- **04** — Kleines Quiz (Arrays, Bedingungen)
-- **05** — React-Komponente (später, wenn Grundlagen sitzen)
-
-## Loslegen
-
-```bash
-# Projekt 01 im Browser öffnen (Datei direkt öffnen oder lokalen Server nutzen)
-cd projekte/01-stimmungslicht
-# z.B. mit Python:
-python3 -m http.server 5173
-# dann http://localhost:5173 öffnen
-```
-
-Viel Spaß beim Lernen — wir bauen das gemeinsam aus.
+- 02 Zeichenfläche (Canvas)
+- 03 Mini-Galerie
+- 04 Quiz
+- 05 Einstieg React
