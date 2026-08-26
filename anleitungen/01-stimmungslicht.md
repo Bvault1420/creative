@@ -8,7 +8,7 @@ Nicht diese Markdown-Datei in Cursor öffnen — das landet wieder im Chat.
 
 Stattdessen die **Lern-App im Handy-Browser** öffnen:
 
-**[Stimmungslicht-App öffnen](https://rawcdn.githack.com/Bvault1420/creative/192d20dad3bb60ed7a0d22c36dac4156e59d8b63/lernen/index.html)**
+**[Stimmungslicht-App öffnen](https://rawcdn.githack.com/Bvault1420/creative/e122483659f3d3c268d1dc66a924b29e6e62aeee/lernen/index.html)**
 
 Dort: Anleitung lesen (kompletter Code + jede Zeile erklärt) → selbst im Tab **Code** abschreiben **oder** übernehmen → Vorschau. Bei Problemen zurück in den Chat.
 
