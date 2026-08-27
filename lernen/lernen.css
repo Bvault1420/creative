@@ -389,6 +389,31 @@ body {
   tab-size: 2;
 }
 
+.editor.is-off {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+  left: -9999px;
+}
+
+.stand {
+  margin: 0 0 1rem;
+  padding: 0.7rem 0.9rem;
+  border-left: 3px solid var(--teal);
+  color: var(--cream);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.wohin {
+  margin: 0 0 0.55rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
 .editor:focus {
   outline: none;
 }

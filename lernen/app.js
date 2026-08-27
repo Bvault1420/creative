@@ -1,4 +1,4 @@
-const STORAGE_KEY = "creative-handy-01-v1";
+const STORAGE_KEY = "creative-handy-01-v2";
 
 const state = {
   step: 0,
@@ -86,7 +86,8 @@ function fileLabel(name) {
 
 function showActiveEditor() {
   ["html", "css", "js"].forEach((key) => {
-    editors[key].classList.toggle("hidden", key !== state.file);
+    editors[key].classList.toggle("is-off", key !== state.file);
+    editors[key].classList.remove("hidden");
   });
   document.querySelectorAll(".file-tab").forEach((tab) => {
     tab.classList.toggle("is-active", tab.dataset.file === state.file);
@@ -124,59 +125,48 @@ function syncEditorsFromState() {
 }
 
 function flushEditorToState() {
-  ["html", "css", "js"].forEach((key) => {
-    state[key] = editors[key].value;
-  });
+  if (!editors[state.file]) return;
+  state[state.file] = editors[state.file].value;
 }
 
 function buildPreviewDocument() {
-  let html = state.html || "<!DOCTYPE html><html><body></body></html>";
   const css = state.css || "";
   const js = state.js || "";
+  let html = (state.html || "").trim() || "<!DOCTYPE html><html><head></head><body></body></html>";
 
   html = html.replace(/<link[^>]*styles\.css[^>]*>/gi, "");
-  html = html.replace(/<script[^>]*script\.js[^>]*>[\s\S]*?<\/script>/gi, "");
+  html = html.replace(/<script[^>]*src=["']script\.js["'][^>]*>[\s\S]*?<\/script>/gi, "");
 
-  const styleTag = `<style>html,body{margin:0;min-height:100%;background:#12151a;color:#f4f0e8}${css}</style>`;
-  const scriptTag = js.trim() ? `<script>${js}<\/script>` : "";
-  const baseTag = `<base href="https://invalid.invalid/">`;
+  const cssBlock = `<style id="preview-css">${css}</style>`;
+  const jsBlock = js.trim() ? `<script id="preview-js">${js}<\/script>` : "";
 
-  if (html.includes("<head>")) {
-    html = html.replace("<head>", `<head>${baseTag}`);
+  if (/<\/head>/i.test(html)) {
+    html = html.replace(/<\/head>/i, `${cssBlock}</head>`);
+  } else if (/<body/i.test(html)) {
+    html = html.replace(/<body/i, `${cssBlock}<body`);
+  } else {
+    html = cssBlock + html;
   }
 
-  if (html.includes("</head>")) {
-    html = html.replace("</head>", `${styleTag}</head>`);
+  if (/<\/body>/i.test(html)) {
+    html = html.replace(/<\/body>/i, `${jsBlock}</body>`);
   } else {
-    html = `<head>${baseTag}${styleTag}</head>${html}`;
-  }
-
-  if (html.includes("</body>")) {
-    html = html.replace("</body>", `${scriptTag}</body>`);
-  } else {
-    html += scriptTag;
+    html += jsBlock;
   }
 
   return html;
 }
 
-let previewBlobUrl = null;
-
 function refreshPreview() {
   const empty = !hasCode();
   previewEmpty.classList.toggle("hidden", !empty);
   if (empty) {
-    if (previewBlobUrl) {
-      URL.revokeObjectURL(previewBlobUrl);
-      previewBlobUrl = null;
-    }
-    preview.src = "about:blank";
+    preview.removeAttribute("src");
+    preview.srcdoc = "<!doctype html><title></title><body></body>";
     return;
   }
-  const html = buildPreviewDocument();
-  if (previewBlobUrl) URL.revokeObjectURL(previewBlobUrl);
-  previewBlobUrl = URL.createObjectURL(new Blob([html], { type: "text/html" }));
-  preview.src = previewBlobUrl;
+  preview.removeAttribute("src");
+  preview.srcdoc = buildPreviewDocument();
 }
 
 function escapeHtml(str) {
@@ -194,27 +184,34 @@ function buildGuide(step) {
   ];
 
   let html = step.intro || "";
-  html += `
-    <div class="path-box">
-      <strong>Zwei Wege — beide zählen</strong>
-      <ol>
-        <li><strong>Abschreiben:</strong> Code unten lesen, Tab <em>Code</em>, oben HTML / CSS / JS wählen, Zeile für Zeile tippen. So bleibt es sitzen.</li>
-        <li><strong>Übernehmen:</strong> Button unten, wenn du erst die Idee prüfen willst. Danach darfst du trotzdem ändern.</li>
-      </ol>
-    </div>
-  `;
+
+  if (step.nr > 1) {
+    html += `<p class="stand">Was du in den Schritten davor gebaut hast, bleibt. Hier kommt nur das Neue.</p>`;
+  } else {
+    html += `
+      <div class="path-box">
+        <strong>Zwei Wege — beide zählen</strong>
+        <ol>
+          <li><strong>Abschreiben:</strong> Code unten lesen, Tab <em>Code</em>, oben HTML / CSS / JS wählen, Zeile für Zeile tippen.</li>
+          <li><strong>Übernehmen:</strong> Button unten, wenn du erst die Idee prüfen willst.</li>
+        </ol>
+      </div>
+    `;
+  }
 
   files.forEach((item) => {
-    const code = (step[item.key] || "").trim();
+    const code = ((step.neu && step.neu[item.key]) || "").trim();
     if (!code) return;
-    html += `<h3>Zum Abschreiben — ${item.label}</h3>`;
+    const wohin = (step.wohin && step.wohin[item.key]) || "";
+    html += `<h3>Neu in diesem Schritt — ${item.label}</h3>`;
     html += `<p class="file-name">${item.file}</p>`;
+    if (wohin) html += `<p class="wohin">${escapeHtml(wohin)}</p>`;
     html += `<pre class="copy-block"><code>${escapeHtml(code)}</code></pre>`;
-    html += `<p class="tiny">Tipp auf den Block kopiert ihn. Besser: im Tab Code selbst tippen.</p>`;
+    html += `<p class="tiny">Tipp auf den Block kopiert ihn. Im Tab Code die richtige Datei wählen, dann einfügen oder abschreiben.</p>`;
 
     const lines = (step.explain && step.explain[item.key]) || [];
     if (!lines.length) return;
-    html += `<h3>Was jede Zeile bedeutet — ${item.label}</h3><ol class="lines">`;
+    html += `<h3>Was jede neue Zeile bedeutet — ${item.label}</h3><ol class="lines">`;
     lines.forEach((row) => {
       html += `<li><code>${escapeHtml(row.line)}</code><span>${escapeHtml(row.mean)}</span></li>`;
     });
@@ -277,10 +274,17 @@ function applyStepCode() {
   state.css = step.css || "";
   state.js = step.js || "";
   syncEditorsFromState();
-  refreshPreview();
   save();
   toast("Code übernommen — schau unter Vorschau");
-  setPanel("preview");
+  state.panel = "preview";
+  document.querySelectorAll(".panel").forEach((panel) => {
+    panel.classList.toggle("hidden", panel.dataset.panel !== "preview");
+  });
+  document.querySelectorAll(".dock__btn").forEach((btn) => {
+    btn.classList.toggle("is-active", btn.dataset.panel === "preview");
+  });
+  window.setTimeout(refreshPreview, 0);
+  save();
 }
 
 function goStep(delta) {
