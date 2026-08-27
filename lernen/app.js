@@ -125,8 +125,9 @@ function syncEditorsFromState() {
 }
 
 function flushEditorToState() {
-  if (!editors[state.file]) return;
-  state[state.file] = editors[state.file].value;
+  ["html", "css", "js"].forEach((key) => {
+    if (editors[key]) state[key] = editors[key].value;
+  });
 }
 
 function buildPreviewDocument() {
@@ -137,15 +138,34 @@ function buildPreviewDocument() {
   html = html.replace(/<link[^>]*styles\.css[^>]*>/gi, "");
   html = html.replace(/<script[^>]*src=["']script\.js["'][^>]*>[\s\S]*?<\/script>/gi, "");
 
-  const cssBlock = `<style id="preview-css">${css}</style>`;
+  const pad = css.trim() ? "body{ padding: 0; }" : "body{ padding: 1.35rem 1.15rem; }";
+  const boot = `
+    :root { color-scheme: dark; }
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      height: 100%;
+      background: #12151a;
+      color: #f4f0e8;
+    }
+    body {
+      box-sizing: border-box;
+      font-family: Outfit, system-ui, sans-serif;
+    }
+    ${pad}
+    h1 { font-size: clamp(1.8rem, 7vw, 2.8rem); line-height: 1.15; margin: 0 0 0.5rem; }
+    p { margin: 0; font-size: 1.05rem; line-height: 1.45; opacity: 0.88; }
+  `;
+
+  const cssBlock = `<style id="preview-boot">${boot}</style><style id="preview-css">${css}</style>`;
   const jsBlock = js.trim() ? `<script id="preview-js">${js}<\/script>` : "";
 
-  if (/<\/head>/i.test(html)) {
+  if (/<head[^>]*>/i.test(html)) {
+    html = html.replace(/<head[^>]*>/i, (open) => `${open}${cssBlock}`);
+  } else if (/<\/head>/i.test(html)) {
     html = html.replace(/<\/head>/i, `${cssBlock}</head>`);
-  } else if (/<body/i.test(html)) {
-    html = html.replace(/<body/i, `${cssBlock}<body`);
   } else {
-    html = cssBlock + html;
+    html = `<head>${cssBlock}</head>${html}`;
   }
 
   if (/<\/body>/i.test(html)) {
