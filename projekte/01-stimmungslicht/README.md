@@ -4,7 +4,7 @@
 
 Öffne die Lern-App im Browser:
 
-https://rawcdn.githack.com/Bvault1420/creative/f13343bb5fd8c9ba53af4862c0484a88fd1e4079/lernen/index.html
+https://rawcdn.githack.com/Bvault1420/creative/ba2aeafce170d1c5521945e80b25ecb373c05701/lernen/index.html
 
 ## Am Computer
 
