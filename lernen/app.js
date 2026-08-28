@@ -1,4 +1,7 @@
-const STORAGE_KEY = "creative-handy-01-v2";
+const CONFIG = window.LERN_CONFIG || {};
+const STORAGE_KEY = CONFIG.storageKey || "creative-handy-01-v2";
+const CSS_FROM = CONFIG.cssFromStep || 2;
+const JS_FROM = CONFIG.jsFromStep || 7;
 
 const state = {
   step: 0,
@@ -99,9 +102,9 @@ function showActiveEditor() {
   if (empty && !stepHas) {
     fileEmpty.textContent =
       state.file === "css"
-        ? "CSS kommt ab Schritt 2. In Schritt 1 bleibt diese Datei leer."
+        ? `CSS kommt ab Schritt ${CSS_FROM}. Vorher bleibt diese Datei leer.`
         : state.file === "js"
-          ? "JavaScript kommt ab Schritt 7. Bis dahin bleibt diese Datei leer."
+          ? `JavaScript kommt ab Schritt ${JS_FROM}. Vorher bleibt diese Datei leer.`
           : "Diese Datei ist noch leer.";
   } else if (empty) {
     fileEmpty.textContent =
