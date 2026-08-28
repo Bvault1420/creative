@@ -4,7 +4,7 @@ Mini-Spiel: tippe den Kreis, sammle 10 Punkte.
 
 ## Auf dem Handy
 
-https://rawcdn.githack.com/Bvault1420/creative/HEAD/lernen/index.html
+https://rawcdn.githack.com/Bvault1420/creative/4d5a6b9f307d878043db003153497dc2da33fc3c/lernen/index.html
 
 Dann **Fang den Punkt** wählen. Anleitung · Code · Vorschau.
 
